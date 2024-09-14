@@ -91,6 +91,8 @@ func GetResponseMessage(response []byte) (*ResponseData, error) {
 	return result, err
 }
 
+// Review: Names returns are possible in Go, but very uncommon
+// The idiomatic way would be to return the array directly
 func toBigEndianByteArray16(i uint16) (arr [2]byte) {
 	binary.BigEndian.PutUint16(arr[0:2], i)
 	return
