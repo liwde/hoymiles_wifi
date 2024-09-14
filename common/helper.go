@@ -4,6 +4,7 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
+
 	"github.com/basvdlei/gotsmart/crc16"
 )
 
@@ -33,12 +34,12 @@ func GetByteMessage(request *RequestData) []byte {
 	var length = uint16(len(request.Message) + HeaderLength)
 
 	// The sequence, crc, length must order by BigEndian
-	var sequenceBytes = toBigEndianByteArray16(sequence)
-	var crc16Bytes = toBigEndianByteArray16(crc)
-	var lengthBytes = toBigEndianByteArray16(length)
+	sequenceBytes := toBigEndianByteArray16(sequence)
+	crc16Bytes := toBigEndianByteArray16(crc)
+	lengthBytes := toBigEndianByteArray16(length)
 
 	// prepare message
-	var message []byte = make([]byte, length)
+	message := make([]byte, length)
 	message = append(message, request.Header...)
 	message = append(message, sequenceBytes[0], sequenceBytes[1])
 	message = append(message, crc16Bytes[0], crc16Bytes[1])
