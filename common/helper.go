@@ -70,12 +70,12 @@ func GetResponseMessage(response []byte) (*ResponseData, error) {
 	// Checks
 	var crcCheck = crc == crc16Response
 	if !crcCheck {
-		err = errors.New(fmt.Sprintf("CRC16 mismatch: %s != %s", crc16Response, crc))
+		err = errors.New(fmt.Sprintf("CRC16 mismatch: %d != %d", crc16Response, crc))
 		return nil, err
 	}
 	var lengthCheck = (length - HeaderLength) == uint16(len(message))
 	if !lengthCheck {
-		err = errors.New(fmt.Sprintf("Length mismatch: %s != %s", len(message), HeaderLength))
+		err = errors.New(fmt.Sprintf("Length mismatch: %d != %d", len(message), HeaderLength))
 		return nil, err
 	}
 
