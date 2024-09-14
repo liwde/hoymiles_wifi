@@ -14,4 +14,7 @@ const (
 	DEV_BMS         = 10
 	MAX_POWER_LIMIT = 100
 	OFFSET          = 28800
+
+	CCONNECTION_TYPE = "tcp"
+	HEADER_LENGTH    = 10
 )
