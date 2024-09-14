@@ -5,10 +5,11 @@ import (
 
 	"google.golang.org/protobuf/proto"
 
+	"github.com/BLun78/hoymiles_wifi/common"
 	"github.com/BLun78/hoymiles_wifi/hoymiles/models"
 )
 
-func UpdateState(conn *Connection) *models.RealDataNewResDTO {
+func UpdateState(conn *common.Connection) *models.RealDataNewResDTO {
 
 	header := []byte{'H', 'M', 0xa3, 0x11}
 
