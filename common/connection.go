@@ -20,12 +20,15 @@ type Connection interface {
 	SendRequest(command []byte, message []byte) []byte
 }
 
+// newConnection is unused at the moment
 func newConnection(host string, port int32) *ConnectionData {
 	var uri string = fmt.Sprintf("tcp://%s:%d", host, port)
 
 	return &ConnectionData{host, port, uri}
 }
 
+// Should SendRequest match the `Connection` interface?
+// If yes, function signatur of the interface should match the function signature of the implementation
 func (connData *ConnectionData) SendRequest(command []byte, message []byte, sequence uint16) ([]byte, error) {
 
 	tcpServer, err := net.ResolveTCPAddr(ConnectionType, connData.Uri)
@@ -45,6 +48,8 @@ func (connData *ConnectionData) SendRequest(command []byte, message []byte, sequ
 		return nil, err
 	}
 
+	// `var` keyword can be dropped, when assignment is done via `:=`
+	// as the type is already defined (either by declaration or return type of a function)
 	var requestData = &RequestData{
 		Header:   command,
 		Sequence: sequence,

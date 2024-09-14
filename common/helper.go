@@ -4,6 +4,7 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
+
 	"github.com/basvdlei/gotsmart/crc16"
 )
 
@@ -33,12 +34,12 @@ func GetByteMessage(request *RequestData) []byte {
 	var length = uint16(len(request.Message) + HeaderLength)
 
 	// The sequence, crc, length must order by BigEndian
-	var sequenceBytes = toBigEndianByteArray16(sequence)
-	var crc16Bytes = toBigEndianByteArray16(crc)
-	var lengthBytes = toBigEndianByteArray16(length)
+	sequenceBytes := toBigEndianByteArray16(sequence)
+	crc16Bytes := toBigEndianByteArray16(crc)
+	lengthBytes := toBigEndianByteArray16(length)
 
 	// prepare message
-	var message []byte = make([]byte, length)
+	message := make([]byte, length)
 	message = append(message, request.Header...)
 	message = append(message, sequenceBytes[0], sequenceBytes[1])
 	message = append(message, crc16Bytes[0], crc16Bytes[1])
@@ -69,12 +70,12 @@ func GetResponseMessage(response []byte) (*ResponseData, error) {
 	// Checks
 	var crcCheck = crc == crc16Response
 	if !crcCheck {
-		err = errors.New(fmt.Sprintf("CRC16 mismatch: %s != %s", crc16Response, crc))
+		err = fmt.Errorf("CRC16 mismatch: %d != %d", crc16Response, crc)
 		return nil, err
 	}
 	var lengthCheck = (length - HeaderLength) == uint16(len(message))
 	if !lengthCheck {
-		err = errors.New(fmt.Sprintf("Length mismatch: %s != %s", len(message), HeaderLength))
+		err = fmt.Errorf("Length mismatch: %d != %d", len(message), HeaderLength)
 		return nil, err
 	}
 
@@ -90,6 +91,8 @@ func GetResponseMessage(response []byte) (*ResponseData, error) {
 	return result, err
 }
 
+// Review: Names returns are possible in Go, but very uncommon
+// The idiomatic way would be to return the array directly
 func toBigEndianByteArray16(i uint16) (arr [2]byte) {
 	binary.BigEndian.PutUint16(arr[0:2], i)
 	return

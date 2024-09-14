@@ -1,27 +1,17 @@
 package common
 
-const DTU_PORT = 10081
-
-const DEV_DTU = 1
-
-const DEV_REPEATER = 2
-
-const DEV_MICRO = 3
-
-const DEV_MODEL = 4
-
-const DEV_METER = 5
-
-const DEV_INV = 6
-
-const DEV_RSD = 7
-
-const DEV_OP = 8
-
-const DEV_GATEWAY = 9
-
-const DEV_BMS = 10
-
-const MAX_POWER_LIMIT = 100
-
-const OFFSET = 28800
+const (
+	DTU_PORT        = 10081
+	DEV_DTU         = 1
+	DEV_REPEATER    = 2
+	DEV_MICRO       = 3
+	DEV_MODEL       = 4
+	DEV_METER       = 5
+	DEV_INV         = 6
+	DEV_RSD         = 7
+	DEV_OP          = 8
+	DEV_GATEWAY     = 9
+	DEV_BMS         = 10
+	MAX_POWER_LIMIT = 100
+	OFFSET          = 28800
+)
