@@ -1,9 +1,11 @@
 package hoymiles_wifi
 
 import (
-	"google.golang.org/protobuf/proto"
-	"hoymiles_wifi/hoymiles/models"
 	"time"
+
+	"google.golang.org/protobuf/proto"
+
+	"github.com/BLun78/hoymiles_wifi/hoymiles/models"
 )
 
 func UpdateState(conn *Connection) *models.RealDataNewResDTO {

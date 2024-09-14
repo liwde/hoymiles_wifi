@@ -1,4 +1,4 @@
-module hoymiles_wifi
+module github.com/BLun78/hoymiles_wifi
 
 go 1.21
 
