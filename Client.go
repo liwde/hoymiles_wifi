@@ -76,7 +76,7 @@ func (client *ClientData) GetAppHeartbeat(request *models.HBReqDTO) (*models.HBR
 	var err error = nil
 	var response proto.Message = &models.HBResDTO{}
 
-	response, err = client.sendRequestProtobuf(common.CMD_REAL_DATA_RES_DTO, request, response)
+	response, err = client.sendRequestProtobuf(common.CMD_HB_RES_DTO, request, response)
 	if err != nil {
 		return nil, err
 	}
@@ -90,7 +90,7 @@ func (client *ClientData) GetAppHistPower(request *models.AppGetHistPowerReqDTO)
 	var err error = nil
 	var response proto.Message = &models.AppGetHistPowerResDTO{}
 
-	response, err = client.sendRequestProtobuf(common.CMD_REAL_DATA_RES_DTO, request, response)
+	response, err = client.sendRequestProtobuf(common.CMD_APP_GET_HIST_POWER_RES, request, response)
 	if err != nil {
 		return nil, err
 	}
@@ -104,7 +104,7 @@ func (client *ClientData) GetAppInformationData(request *models.APPInfoDataReqDT
 	var err error = nil
 	var response proto.Message = &models.APPInfoDataResDTO{}
 
-	response, err = client.sendRequestProtobuf(common.CMD_REAL_DATA_RES_DTO, request, response)
+	response, err = client.sendRequestProtobuf(common.CMD_APP_INFO_DATA_RES_DTO, request, response)
 	if err != nil {
 		return nil, err
 	}
@@ -118,7 +118,7 @@ func (client *ClientData) GetNetworkInfo(request *models.NetworkInfoReqDTO) (*mo
 	var err error = nil
 	var response proto.Message = &models.NetworkInfoResDTO{}
 
-	response, err = client.sendRequestProtobuf(common.CMD_REAL_DATA_RES_DTO, request, response)
+	response, err = client.sendRequestProtobuf(common.CMD_NETWORK_INFO_RES, request, response)
 	if err != nil {
 		return nil, err
 	}
@@ -132,7 +132,7 @@ func (client *ClientData) GetConfig(request *models.GetConfigReqDTO) (*models.Ge
 	var err error = nil
 	var response proto.Message = &models.GetConfigResDTO{}
 
-	response, err = client.sendRequestProtobuf(common.CMD_REAL_DATA_RES_DTO, request, response)
+	response, err = client.sendRequestProtobuf(common.CMD_GET_CONFIG, request, response)
 	if err != nil {
 		return nil, err
 	}
