@@ -13,10 +13,11 @@ import (
 
 type (
 	ClientData struct {
-		connectionData *ConnectionData
+		connectionData *connectionData
 		connection     net.Conn
+		ConnectionInfo string
 	}
-	ConnectionData struct {
+	connectionData struct {
 		Host     string
 		Port     int32
 		Uri      string
@@ -48,20 +49,25 @@ type (
 )
 
 // NewClient Create a Hoymiles Wifi Client
+// host: is the ipaddress or dns-name of the inverter
 func NewClientDefault(host string) *ClientData {
 	return NewClient(host, common.DTU_PORT)
 }
 
 // NewClient Create a Hoymiles Wifi Client
+// host: is the ipaddress or dns-name of the inverter
 // default port is 10081
 func NewClient(host string, port int32) *ClientData {
-	connectionData := &ConnectionData{
+	connectionData := &connectionData{
 		Host:     host,
 		Port:     port,
 		Uri:      fmt.Sprintf("%s:%d", host, port),
 		Sequence: 0,
 	}
-	return &ClientData{connectionData: connectionData}
+
+	return &ClientData{connectionData: connectionData,
+		ConnectionInfo: fmt.Sprintf("%s://%s:%d", common.CCONNECTION_TYPE, host, port),
+	}
 }
 
 func (client *ClientData) GetAppHeartbeat(request *models.HBReqDTO) (*models.HBResDTO, error) {
