@@ -47,21 +47,21 @@ func NewClient(host string, port int32) *ClientData {
 	connectionData := &ConnectionData{
 		Host:     host,
 		Port:     port,
-		Uri:      fmt.Sprintf("tcp://%s:%d", host, port),
+		Uri:      fmt.Sprintf("%s:%d", host, port),
 		Sequence: 0,
 	}
 
 	return &ClientData{connectionData: connectionData}
 }
 
-func (client *ClientData) GetRealDataNew(request *models.RealDataNewReqDTO) (*models.RealDataNewResDTO, *models.RealDataNewResDTO) {
+func (client *ClientData) GetRealDataNew(request *models.RealDataNewReqDTO) (*models.RealDataNewResDTO, error) {
 
 	var err error = nil
 	var response proto.Message = &models.RealDataNewResDTO{}
 
 	response, err = client.sendRequestProtobuf(common.CMD_REAL_DATA_RES_DTO, request, response)
 	if err != nil {
-		return nil, nil
+		return nil, err
 	}
 
 	return response.(*models.RealDataNewResDTO), nil
