@@ -20,7 +20,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type NetworkInfoReqDTO struct {
+type NetworkInfoResDTO struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -37,121 +37,10 @@ type NetworkInfoReqDTO struct {
 	ApSetState   int32  `protobuf:"varint,10,opt,name=ap_set_state,json=apSetState,proto3" json:"ap_set_state,omitempty"`      // Access Point (AP) setting state
 }
 
-func (x *NetworkInfoReqDTO) Reset() {
-	*x = NetworkInfoReqDTO{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_NetworkInfo_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *NetworkInfoReqDTO) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*NetworkInfoReqDTO) ProtoMessage() {}
-
-func (x *NetworkInfoReqDTO) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_NetworkInfo_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use NetworkInfoReqDTO.ProtoReflect.Descriptor instead.
-func (*NetworkInfoReqDTO) Descriptor() ([]byte, []int) {
-	return file_protos_NetworkInfo_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *NetworkInfoReqDTO) GetDtuSn() string {
-	if x != nil {
-		return x.DtuSn
-	}
-	return ""
-}
-
-func (x *NetworkInfoReqDTO) GetTime() uint32 {
-	if x != nil {
-		return x.Time
-	}
-	return 0
-}
-
-func (x *NetworkInfoReqDTO) GetNetSetMod() int32 {
-	if x != nil {
-		return x.NetSetMod
-	}
-	return 0
-}
-
-func (x *NetworkInfoReqDTO) GetNetSetTime() int32 {
-	if x != nil {
-		return x.NetSetTime
-	}
-	return 0
-}
-
-func (x *NetworkInfoReqDTO) GetNetSetState() int32 {
-	if x != nil {
-		return x.NetSetState
-	}
-	return 0
-}
-
-func (x *NetworkInfoReqDTO) GetNetWorkMod() int32 {
-	if x != nil {
-		return x.NetWorkMod
-	}
-	return 0
-}
-
-func (x *NetworkInfoReqDTO) GetNetWorkTime() int32 {
-	if x != nil {
-		return x.NetWorkTime
-	}
-	return 0
-}
-
-func (x *NetworkInfoReqDTO) GetCsq() int32 {
-	if x != nil {
-		return x.Csq
-	}
-	return 0
-}
-
-func (x *NetworkInfoReqDTO) GetNetWorkState() int32 {
-	if x != nil {
-		return x.NetWorkState
-	}
-	return 0
-}
-
-func (x *NetworkInfoReqDTO) GetApSetState() int32 {
-	if x != nil {
-		return x.ApSetState
-	}
-	return 0
-}
-
-type NetworkInfoResDTO struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Offset int32  `protobuf:"varint,1,opt,name=offset,proto3" json:"offset,omitempty"` // Offset value for response
-	Time   uint32 `protobuf:"varint,2,opt,name=time,proto3" json:"time,omitempty"`     // Timestamp of the response
-}
-
 func (x *NetworkInfoResDTO) Reset() {
 	*x = NetworkInfoResDTO{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_NetworkInfo_proto_msgTypes[1]
+		mi := &file_protos_NetworkInfo_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -164,7 +53,7 @@ func (x *NetworkInfoResDTO) String() string {
 func (*NetworkInfoResDTO) ProtoMessage() {}
 
 func (x *NetworkInfoResDTO) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_NetworkInfo_proto_msgTypes[1]
+	mi := &file_protos_NetworkInfo_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -177,17 +66,128 @@ func (x *NetworkInfoResDTO) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NetworkInfoResDTO.ProtoReflect.Descriptor instead.
 func (*NetworkInfoResDTO) Descriptor() ([]byte, []int) {
+	return file_protos_NetworkInfo_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *NetworkInfoResDTO) GetDtuSn() string {
+	if x != nil {
+		return x.DtuSn
+	}
+	return ""
+}
+
+func (x *NetworkInfoResDTO) GetTime() uint32 {
+	if x != nil {
+		return x.Time
+	}
+	return 0
+}
+
+func (x *NetworkInfoResDTO) GetNetSetMod() int32 {
+	if x != nil {
+		return x.NetSetMod
+	}
+	return 0
+}
+
+func (x *NetworkInfoResDTO) GetNetSetTime() int32 {
+	if x != nil {
+		return x.NetSetTime
+	}
+	return 0
+}
+
+func (x *NetworkInfoResDTO) GetNetSetState() int32 {
+	if x != nil {
+		return x.NetSetState
+	}
+	return 0
+}
+
+func (x *NetworkInfoResDTO) GetNetWorkMod() int32 {
+	if x != nil {
+		return x.NetWorkMod
+	}
+	return 0
+}
+
+func (x *NetworkInfoResDTO) GetNetWorkTime() int32 {
+	if x != nil {
+		return x.NetWorkTime
+	}
+	return 0
+}
+
+func (x *NetworkInfoResDTO) GetCsq() int32 {
+	if x != nil {
+		return x.Csq
+	}
+	return 0
+}
+
+func (x *NetworkInfoResDTO) GetNetWorkState() int32 {
+	if x != nil {
+		return x.NetWorkState
+	}
+	return 0
+}
+
+func (x *NetworkInfoResDTO) GetApSetState() int32 {
+	if x != nil {
+		return x.ApSetState
+	}
+	return 0
+}
+
+type NetworkInfoReqDTO struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Offset int32  `protobuf:"varint,1,opt,name=offset,proto3" json:"offset,omitempty"` // Offset value for response
+	Time   uint32 `protobuf:"varint,2,opt,name=time,proto3" json:"time,omitempty"`     // Timestamp of the response
+}
+
+func (x *NetworkInfoReqDTO) Reset() {
+	*x = NetworkInfoReqDTO{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_protos_NetworkInfo_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *NetworkInfoReqDTO) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*NetworkInfoReqDTO) ProtoMessage() {}
+
+func (x *NetworkInfoReqDTO) ProtoReflect() protoreflect.Message {
+	mi := &file_protos_NetworkInfo_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use NetworkInfoReqDTO.ProtoReflect.Descriptor instead.
+func (*NetworkInfoReqDTO) Descriptor() ([]byte, []int) {
 	return file_protos_NetworkInfo_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *NetworkInfoResDTO) GetOffset() int32 {
+func (x *NetworkInfoReqDTO) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-func (x *NetworkInfoResDTO) GetTime() uint32 {
+func (x *NetworkInfoReqDTO) GetTime() uint32 {
 	if x != nil {
 		return x.Time
 	}
@@ -199,7 +199,7 @@ var File_protos_NetworkInfo_proto protoreflect.FileDescriptor
 var file_protos_NetworkInfo_proto_rawDesc = []byte{
 	0x0a, 0x18, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b,
 	0x49, 0x6e, 0x66, 0x6f, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xc4, 0x02, 0x0a, 0x11, 0x4e,
-	0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x71, 0x44, 0x54, 0x4f,
+	0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x44, 0x54, 0x4f,
 	0x12, 0x15, 0x0a, 0x06, 0x64, 0x74, 0x75, 0x5f, 0x73, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
 	0x52, 0x05, 0x64, 0x74, 0x75, 0x53, 0x6e, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x69, 0x6d, 0x65, 0x18,
 	0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x74, 0x69, 0x6d, 0x65, 0x12, 0x1e, 0x0a, 0x0b, 0x6e,
@@ -220,7 +220,7 @@ var file_protos_NetworkInfo_proto_rawDesc = []byte{
 	0x20, 0x0a, 0x0c, 0x61, 0x70, 0x5f, 0x73, 0x65, 0x74, 0x5f, 0x73, 0x74, 0x61, 0x74, 0x65, 0x18,
 	0x0a, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0a, 0x61, 0x70, 0x53, 0x65, 0x74, 0x53, 0x74, 0x61, 0x74,
 	0x65, 0x22, 0x3f, 0x0a, 0x11, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x49, 0x6e, 0x66, 0x6f,
-	0x52, 0x65, 0x73, 0x44, 0x54, 0x4f, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74,
+	0x52, 0x65, 0x71, 0x44, 0x54, 0x4f, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x12,
 	0x0a, 0x04, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x04, 0x74, 0x69,
 	0x6d, 0x65, 0x42, 0x23, 0x5a, 0x0f, 0x68, 0x6f, 0x79, 0x6d, 0x69, 0x6c, 0x65, 0x73, 0x2f, 0x6d,
@@ -242,8 +242,8 @@ func file_protos_NetworkInfo_proto_rawDescGZIP() []byte {
 
 var file_protos_NetworkInfo_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_protos_NetworkInfo_proto_goTypes = []any{
-	(*NetworkInfoReqDTO)(nil), // 0: NetworkInfoReqDTO
-	(*NetworkInfoResDTO)(nil), // 1: NetworkInfoResDTO
+	(*NetworkInfoResDTO)(nil), // 0: NetworkInfoResDTO
+	(*NetworkInfoReqDTO)(nil), // 1: NetworkInfoReqDTO
 }
 var file_protos_NetworkInfo_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
@@ -260,7 +260,7 @@ func file_protos_NetworkInfo_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_protos_NetworkInfo_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*NetworkInfoReqDTO); i {
+			switch v := v.(*NetworkInfoResDTO); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -272,7 +272,7 @@ func file_protos_NetworkInfo_proto_init() {
 			}
 		}
 		file_protos_NetworkInfo_proto_msgTypes[1].Exporter = func(v any, i int) any {
-			switch v := v.(*NetworkInfoResDTO); i {
+			switch v := v.(*NetworkInfoReqDTO); i {
 			case 0:
 				return &v.state
 			case 1:

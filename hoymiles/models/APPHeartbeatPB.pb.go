@@ -20,7 +20,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type HBReqDTO struct {
+type HBResDTO struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -32,87 +32,10 @@ type HBReqDTO struct {
 	DeviceSerialNumber string `protobuf:"bytes,5,opt,name=device_serial_number,json=deviceSerialNumber,proto3" json:"device_serial_number,omitempty"` // Device serial number
 }
 
-func (x *HBReqDTO) Reset() {
-	*x = HBReqDTO{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_APPHeartbeatPB_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *HBReqDTO) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*HBReqDTO) ProtoMessage() {}
-
-func (x *HBReqDTO) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_APPHeartbeatPB_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use HBReqDTO.ProtoReflect.Descriptor instead.
-func (*HBReqDTO) Descriptor() ([]byte, []int) {
-	return file_protos_APPHeartbeatPB_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *HBReqDTO) GetOffset() int32 {
-	if x != nil {
-		return x.Offset
-	}
-	return 0
-}
-
-func (x *HBReqDTO) GetTime() int32 {
-	if x != nil {
-		return x.Time
-	}
-	return 0
-}
-
-func (x *HBReqDTO) GetCsq() int32 {
-	if x != nil {
-		return x.Csq
-	}
-	return 0
-}
-
-func (x *HBReqDTO) GetDtuSerialNumber() string {
-	if x != nil {
-		return x.DtuSerialNumber
-	}
-	return ""
-}
-
-func (x *HBReqDTO) GetDeviceSerialNumber() string {
-	if x != nil {
-		return x.DeviceSerialNumber
-	}
-	return ""
-}
-
-type HBResDTO struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Offset     int32  `protobuf:"varint,1,opt,name=offset,proto3" json:"offset,omitempty"`                            // Offset value
-	Time       int32  `protobuf:"varint,2,opt,name=time,proto3" json:"time,omitempty"`                                // Timestamp of the response
-	TimeYmdHms string `protobuf:"bytes,3,opt,name=time_ymd_hms,json=timeYmdHms,proto3" json:"time_ymd_hms,omitempty"` // Timestamp in the format YMD_HMS
-}
-
 func (x *HBResDTO) Reset() {
 	*x = HBResDTO{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_APPHeartbeatPB_proto_msgTypes[1]
+		mi := &file_protos_APPHeartbeatPB_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -125,7 +48,7 @@ func (x *HBResDTO) String() string {
 func (*HBResDTO) ProtoMessage() {}
 
 func (x *HBResDTO) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_APPHeartbeatPB_proto_msgTypes[1]
+	mi := &file_protos_APPHeartbeatPB_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -138,7 +61,7 @@ func (x *HBResDTO) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HBResDTO.ProtoReflect.Descriptor instead.
 func (*HBResDTO) Descriptor() ([]byte, []int) {
-	return file_protos_APPHeartbeatPB_proto_rawDescGZIP(), []int{1}
+	return file_protos_APPHeartbeatPB_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *HBResDTO) GetOffset() int32 {
@@ -155,7 +78,84 @@ func (x *HBResDTO) GetTime() int32 {
 	return 0
 }
 
-func (x *HBResDTO) GetTimeYmdHms() string {
+func (x *HBResDTO) GetCsq() int32 {
+	if x != nil {
+		return x.Csq
+	}
+	return 0
+}
+
+func (x *HBResDTO) GetDtuSerialNumber() string {
+	if x != nil {
+		return x.DtuSerialNumber
+	}
+	return ""
+}
+
+func (x *HBResDTO) GetDeviceSerialNumber() string {
+	if x != nil {
+		return x.DeviceSerialNumber
+	}
+	return ""
+}
+
+type HBReqDTO struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Offset     int32  `protobuf:"varint,1,opt,name=offset,proto3" json:"offset,omitempty"`                            // Offset value
+	Time       int32  `protobuf:"varint,2,opt,name=time,proto3" json:"time,omitempty"`                                // Timestamp of the response
+	TimeYmdHms string `protobuf:"bytes,3,opt,name=time_ymd_hms,json=timeYmdHms,proto3" json:"time_ymd_hms,omitempty"` // Timestamp in the format YMD_HMS
+}
+
+func (x *HBReqDTO) Reset() {
+	*x = HBReqDTO{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_protos_APPHeartbeatPB_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *HBReqDTO) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*HBReqDTO) ProtoMessage() {}
+
+func (x *HBReqDTO) ProtoReflect() protoreflect.Message {
+	mi := &file_protos_APPHeartbeatPB_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use HBReqDTO.ProtoReflect.Descriptor instead.
+func (*HBReqDTO) Descriptor() ([]byte, []int) {
+	return file_protos_APPHeartbeatPB_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *HBReqDTO) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *HBReqDTO) GetTime() int32 {
+	if x != nil {
+		return x.Time
+	}
+	return 0
+}
+
+func (x *HBReqDTO) GetTimeYmdHms() string {
 	if x != nil {
 		return x.TimeYmdHms
 	}
@@ -167,7 +167,7 @@ var File_protos_APPHeartbeatPB_proto protoreflect.FileDescriptor
 var file_protos_APPHeartbeatPB_proto_rawDesc = []byte{
 	0x0a, 0x1b, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x41, 0x50, 0x50, 0x48, 0x65, 0x61, 0x72,
 	0x74, 0x62, 0x65, 0x61, 0x74, 0x50, 0x42, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xa6, 0x01,
-	0x0a, 0x08, 0x48, 0x42, 0x52, 0x65, 0x71, 0x44, 0x54, 0x4f, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x66,
+	0x0a, 0x08, 0x48, 0x42, 0x52, 0x65, 0x73, 0x44, 0x54, 0x4f, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x66,
 	0x66, 0x73, 0x65, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x6f, 0x66, 0x66, 0x73,
 	0x65, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05,
 	0x52, 0x04, 0x74, 0x69, 0x6d, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x63, 0x73, 0x71, 0x18, 0x03, 0x20,
@@ -177,7 +177,7 @@ var file_protos_APPHeartbeatPB_proto_rawDesc = []byte{
 	0x6d, 0x62, 0x65, 0x72, 0x12, 0x30, 0x0a, 0x14, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x5f, 0x73,
 	0x65, 0x72, 0x69, 0x61, 0x6c, 0x5f, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x18, 0x05, 0x20, 0x01,
 	0x28, 0x09, 0x52, 0x12, 0x64, 0x65, 0x76, 0x69, 0x63, 0x65, 0x53, 0x65, 0x72, 0x69, 0x61, 0x6c,
-	0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x22, 0x58, 0x0a, 0x08, 0x48, 0x42, 0x52, 0x65, 0x73, 0x44,
+	0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x22, 0x58, 0x0a, 0x08, 0x48, 0x42, 0x52, 0x65, 0x71, 0x44,
 	0x54, 0x4f, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x01, 0x20, 0x01,
 	0x28, 0x05, 0x52, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x69,
 	0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x74, 0x69, 0x6d, 0x65, 0x12, 0x20,
@@ -202,8 +202,8 @@ func file_protos_APPHeartbeatPB_proto_rawDescGZIP() []byte {
 
 var file_protos_APPHeartbeatPB_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_protos_APPHeartbeatPB_proto_goTypes = []any{
-	(*HBReqDTO)(nil), // 0: HBReqDTO
-	(*HBResDTO)(nil), // 1: HBResDTO
+	(*HBResDTO)(nil), // 0: HBResDTO
+	(*HBReqDTO)(nil), // 1: HBReqDTO
 }
 var file_protos_APPHeartbeatPB_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
@@ -220,7 +220,7 @@ func file_protos_APPHeartbeatPB_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_protos_APPHeartbeatPB_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*HBReqDTO); i {
+			switch v := v.(*HBResDTO); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -232,7 +232,7 @@ func file_protos_APPHeartbeatPB_proto_init() {
 			}
 		}
 		file_protos_APPHeartbeatPB_proto_msgTypes[1].Exporter = func(v any, i int) any {
-			switch v := v.(*HBResDTO); i {
+			switch v := v.(*HBReqDTO); i {
 			case 0:
 				return &v.state
 			case 1:

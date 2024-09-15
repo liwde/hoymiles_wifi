@@ -599,7 +599,7 @@ func (x *APPFeatureMO) GetValue() string {
 	return ""
 }
 
-type APPInfoDataReqDTO struct {
+type APPInfoDataResDTO struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -619,145 +619,10 @@ type APPInfoDataReqDTO struct {
 	AppFeatures     []*APPFeatureMO   `protobuf:"bytes,13,rep,name=app_features,json=appFeatures,proto3" json:"app_features,omitempty"`              // Application features
 }
 
-func (x *APPInfoDataReqDTO) Reset() {
-	*x = APPInfoDataReqDTO{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_APPInfomationData_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *APPInfoDataReqDTO) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*APPInfoDataReqDTO) ProtoMessage() {}
-
-func (x *APPInfoDataReqDTO) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_APPInfomationData_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use APPInfoDataReqDTO.ProtoReflect.Descriptor instead.
-func (*APPInfoDataReqDTO) Descriptor() ([]byte, []int) {
-	return file_protos_APPInfomationData_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *APPInfoDataReqDTO) GetDtuSerialNumber() string {
-	if x != nil {
-		return x.DtuSerialNumber
-	}
-	return ""
-}
-
-func (x *APPInfoDataReqDTO) GetTimestamp() uint32 {
-	if x != nil {
-		return x.Timestamp
-	}
-	return 0
-}
-
-func (x *APPInfoDataReqDTO) GetDeviceNumber() int32 {
-	if x != nil {
-		return x.DeviceNumber
-	}
-	return 0
-}
-
-func (x *APPInfoDataReqDTO) GetPvNumber() int32 {
-	if x != nil {
-		return x.PvNumber
-	}
-	return 0
-}
-
-func (x *APPInfoDataReqDTO) GetPackageNumber() int32 {
-	if x != nil {
-		return x.PackageNumber
-	}
-	return 0
-}
-
-func (x *APPInfoDataReqDTO) GetCurrentPackage() int32 {
-	if x != nil {
-		return x.CurrentPackage
-	}
-	return 0
-}
-
-func (x *APPInfoDataReqDTO) GetChannel() int32 {
-	if x != nil {
-		return x.Channel
-	}
-	return 0
-}
-
-func (x *APPInfoDataReqDTO) GetDtuInfo() *APPDtuInfoMO {
-	if x != nil {
-		return x.DtuInfo
-	}
-	return nil
-}
-
-func (x *APPInfoDataReqDTO) GetMeterInfo() []*APPMeterInfoMO {
-	if x != nil {
-		return x.MeterInfo
-	}
-	return nil
-}
-
-func (x *APPInfoDataReqDTO) GetRpInfo() []*APPRpInfoMO {
-	if x != nil {
-		return x.RpInfo
-	}
-	return nil
-}
-
-func (x *APPInfoDataReqDTO) GetPvInfo() []*APPPvInfoMO {
-	if x != nil {
-		return x.PvInfo
-	}
-	return nil
-}
-
-func (x *APPInfoDataReqDTO) GetUnknownField() uint32 {
-	if x != nil {
-		return x.UnknownField
-	}
-	return 0
-}
-
-func (x *APPInfoDataReqDTO) GetAppFeatures() []*APPFeatureMO {
-	if x != nil {
-		return x.AppFeatures
-	}
-	return nil
-}
-
-type APPInfoDataResDTO struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	TimeYmdHms     string `protobuf:"bytes,1,opt,name=time_ymd_hms,json=timeYmdHms,proto3" json:"time_ymd_hms,omitempty"`            // Date and time
-	Offset         int32  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`                                       // Offset
-	CurrentPackage int32  `protobuf:"varint,3,opt,name=current_package,json=currentPackage,proto3" json:"current_package,omitempty"` // Current package
-	ErrorCode      int32  `protobuf:"varint,4,opt,name=error_code,json=errorCode,proto3" json:"error_code,omitempty"`                // Error code
-	Time           uint32 `protobuf:"varint,5,opt,name=time,proto3" json:"time,omitempty"`                                           // Timestamp
-}
-
 func (x *APPInfoDataResDTO) Reset() {
 	*x = APPInfoDataResDTO{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_APPInfomationData_proto_msgTypes[6]
+		mi := &file_protos_APPInfomationData_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -770,7 +635,7 @@ func (x *APPInfoDataResDTO) String() string {
 func (*APPInfoDataResDTO) ProtoMessage() {}
 
 func (x *APPInfoDataResDTO) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_APPInfomationData_proto_msgTypes[6]
+	mi := &file_protos_APPInfomationData_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -783,19 +648,40 @@ func (x *APPInfoDataResDTO) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use APPInfoDataResDTO.ProtoReflect.Descriptor instead.
 func (*APPInfoDataResDTO) Descriptor() ([]byte, []int) {
-	return file_protos_APPInfomationData_proto_rawDescGZIP(), []int{6}
+	return file_protos_APPInfomationData_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *APPInfoDataResDTO) GetTimeYmdHms() string {
+func (x *APPInfoDataResDTO) GetDtuSerialNumber() string {
 	if x != nil {
-		return x.TimeYmdHms
+		return x.DtuSerialNumber
 	}
 	return ""
 }
 
-func (x *APPInfoDataResDTO) GetOffset() int32 {
+func (x *APPInfoDataResDTO) GetTimestamp() uint32 {
 	if x != nil {
-		return x.Offset
+		return x.Timestamp
+	}
+	return 0
+}
+
+func (x *APPInfoDataResDTO) GetDeviceNumber() int32 {
+	if x != nil {
+		return x.DeviceNumber
+	}
+	return 0
+}
+
+func (x *APPInfoDataResDTO) GetPvNumber() int32 {
+	if x != nil {
+		return x.PvNumber
+	}
+	return 0
+}
+
+func (x *APPInfoDataResDTO) GetPackageNumber() int32 {
+	if x != nil {
+		return x.PackageNumber
 	}
 	return 0
 }
@@ -807,14 +693,128 @@ func (x *APPInfoDataResDTO) GetCurrentPackage() int32 {
 	return 0
 }
 
-func (x *APPInfoDataResDTO) GetErrorCode() int32 {
+func (x *APPInfoDataResDTO) GetChannel() int32 {
+	if x != nil {
+		return x.Channel
+	}
+	return 0
+}
+
+func (x *APPInfoDataResDTO) GetDtuInfo() *APPDtuInfoMO {
+	if x != nil {
+		return x.DtuInfo
+	}
+	return nil
+}
+
+func (x *APPInfoDataResDTO) GetMeterInfo() []*APPMeterInfoMO {
+	if x != nil {
+		return x.MeterInfo
+	}
+	return nil
+}
+
+func (x *APPInfoDataResDTO) GetRpInfo() []*APPRpInfoMO {
+	if x != nil {
+		return x.RpInfo
+	}
+	return nil
+}
+
+func (x *APPInfoDataResDTO) GetPvInfo() []*APPPvInfoMO {
+	if x != nil {
+		return x.PvInfo
+	}
+	return nil
+}
+
+func (x *APPInfoDataResDTO) GetUnknownField() uint32 {
+	if x != nil {
+		return x.UnknownField
+	}
+	return 0
+}
+
+func (x *APPInfoDataResDTO) GetAppFeatures() []*APPFeatureMO {
+	if x != nil {
+		return x.AppFeatures
+	}
+	return nil
+}
+
+type APPInfoDataReqDTO struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TimeYmdHms     string `protobuf:"bytes,1,opt,name=time_ymd_hms,json=timeYmdHms,proto3" json:"time_ymd_hms,omitempty"`            // Date and time
+	Offset         int32  `protobuf:"varint,2,opt,name=offset,proto3" json:"offset,omitempty"`                                       // Offset
+	CurrentPackage int32  `protobuf:"varint,3,opt,name=current_package,json=currentPackage,proto3" json:"current_package,omitempty"` // Current package
+	ErrorCode      int32  `protobuf:"varint,4,opt,name=error_code,json=errorCode,proto3" json:"error_code,omitempty"`                // Error code
+	Time           uint32 `protobuf:"varint,5,opt,name=time,proto3" json:"time,omitempty"`                                           // Timestamp
+}
+
+func (x *APPInfoDataReqDTO) Reset() {
+	*x = APPInfoDataReqDTO{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_protos_APPInfomationData_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *APPInfoDataReqDTO) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*APPInfoDataReqDTO) ProtoMessage() {}
+
+func (x *APPInfoDataReqDTO) ProtoReflect() protoreflect.Message {
+	mi := &file_protos_APPInfomationData_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use APPInfoDataReqDTO.ProtoReflect.Descriptor instead.
+func (*APPInfoDataReqDTO) Descriptor() ([]byte, []int) {
+	return file_protos_APPInfomationData_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *APPInfoDataReqDTO) GetTimeYmdHms() string {
+	if x != nil {
+		return x.TimeYmdHms
+	}
+	return ""
+}
+
+func (x *APPInfoDataReqDTO) GetOffset() int32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+func (x *APPInfoDataReqDTO) GetCurrentPackage() int32 {
+	if x != nil {
+		return x.CurrentPackage
+	}
+	return 0
+}
+
+func (x *APPInfoDataReqDTO) GetErrorCode() int32 {
 	if x != nil {
 		return x.ErrorCode
 	}
 	return 0
 }
 
-func (x *APPInfoDataResDTO) GetTime() uint32 {
+func (x *APPInfoDataReqDTO) GetTime() uint32 {
 	if x != nil {
 		return x.Time
 	}
@@ -943,7 +943,7 @@ var file_protos_APPInfomationData_proto_rawDesc = []byte{
 	0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14,
 	0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76,
 	0x61, 0x6c, 0x75, 0x65, 0x22, 0x88, 0x04, 0x0a, 0x11, 0x41, 0x50, 0x50, 0x49, 0x6e, 0x66, 0x6f,
-	0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x71, 0x44, 0x54, 0x4f, 0x12, 0x2a, 0x0a, 0x11, 0x64, 0x74,
+	0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x73, 0x44, 0x54, 0x4f, 0x12, 0x2a, 0x0a, 0x11, 0x64, 0x74,
 	0x75, 0x5f, 0x73, 0x65, 0x72, 0x69, 0x61, 0x6c, 0x5f, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0f, 0x64, 0x74, 0x75, 0x53, 0x65, 0x72, 0x69, 0x61, 0x6c,
 	0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x12, 0x1c, 0x0a, 0x09, 0x74, 0x69, 0x6d, 0x65, 0x73, 0x74,
@@ -976,7 +976,7 @@ var file_protos_APPInfomationData_proto_rawDesc = []byte{
 	0x03, 0x28, 0x0b, 0x32, 0x0d, 0x2e, 0x41, 0x50, 0x50, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65,
 	0x4d, 0x4f, 0x52, 0x0b, 0x61, 0x70, 0x70, 0x46, 0x65, 0x61, 0x74, 0x75, 0x72, 0x65, 0x73, 0x22,
 	0xa9, 0x01, 0x0a, 0x11, 0x41, 0x50, 0x50, 0x49, 0x6e, 0x66, 0x6f, 0x44, 0x61, 0x74, 0x61, 0x52,
-	0x65, 0x73, 0x44, 0x54, 0x4f, 0x12, 0x20, 0x0a, 0x0c, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x79, 0x6d,
+	0x65, 0x71, 0x44, 0x54, 0x4f, 0x12, 0x20, 0x0a, 0x0c, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x79, 0x6d,
 	0x64, 0x5f, 0x68, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x74, 0x69, 0x6d,
 	0x65, 0x59, 0x6d, 0x64, 0x48, 0x6d, 0x73, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65,
 	0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x12,
@@ -1010,15 +1010,15 @@ var file_protos_APPInfomationData_proto_goTypes = []any{
 	(*APPRpInfoMO)(nil),       // 2: APPRpInfoMO
 	(*APPPvInfoMO)(nil),       // 3: APPPvInfoMO
 	(*APPFeatureMO)(nil),      // 4: APPFeatureMO
-	(*APPInfoDataReqDTO)(nil), // 5: APPInfoDataReqDTO
-	(*APPInfoDataResDTO)(nil), // 6: APPInfoDataResDTO
+	(*APPInfoDataResDTO)(nil), // 5: APPInfoDataResDTO
+	(*APPInfoDataReqDTO)(nil), // 6: APPInfoDataReqDTO
 }
 var file_protos_APPInfomationData_proto_depIdxs = []int32{
-	0, // 0: APPInfoDataReqDTO.dtu_info:type_name -> APPDtuInfoMO
-	1, // 1: APPInfoDataReqDTO.meter_info:type_name -> APPMeterInfoMO
-	2, // 2: APPInfoDataReqDTO.rp_info:type_name -> APPRpInfoMO
-	3, // 3: APPInfoDataReqDTO.pv_info:type_name -> APPPvInfoMO
-	4, // 4: APPInfoDataReqDTO.app_features:type_name -> APPFeatureMO
+	0, // 0: APPInfoDataResDTO.dtu_info:type_name -> APPDtuInfoMO
+	1, // 1: APPInfoDataResDTO.meter_info:type_name -> APPMeterInfoMO
+	2, // 2: APPInfoDataResDTO.rp_info:type_name -> APPRpInfoMO
+	3, // 3: APPInfoDataResDTO.pv_info:type_name -> APPPvInfoMO
+	4, // 4: APPInfoDataResDTO.app_features:type_name -> APPFeatureMO
 	5, // [5:5] is the sub-list for method output_type
 	5, // [5:5] is the sub-list for method input_type
 	5, // [5:5] is the sub-list for extension type_name
@@ -1093,7 +1093,7 @@ func file_protos_APPInfomationData_proto_init() {
 			}
 		}
 		file_protos_APPInfomationData_proto_msgTypes[5].Exporter = func(v any, i int) any {
-			switch v := v.(*APPInfoDataReqDTO); i {
+			switch v := v.(*APPInfoDataResDTO); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1105,7 +1105,7 @@ func file_protos_APPInfomationData_proto_init() {
 			}
 		}
 		file_protos_APPInfomationData_proto_msgTypes[6].Exporter = func(v any, i int) any {
-			switch v := v.(*APPInfoDataResDTO); i {
+			switch v := v.(*APPInfoDataReqDTO); i {
 			case 0:
 				return &v.state
 			case 1:

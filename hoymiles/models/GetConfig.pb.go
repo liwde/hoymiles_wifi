@@ -20,7 +20,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type GetConfigResDTO struct {
+type GetConfigReqDTO struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -29,8 +29,8 @@ type GetConfigResDTO struct {
 	Time   uint32 `protobuf:"varint,2,opt,name=time,proto3" json:"time,omitempty"`     // Timestamp of the response
 }
 
-func (x *GetConfigResDTO) Reset() {
-	*x = GetConfigResDTO{}
+func (x *GetConfigReqDTO) Reset() {
+	*x = GetConfigReqDTO{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_protos_GetConfig_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -38,13 +38,13 @@ func (x *GetConfigResDTO) Reset() {
 	}
 }
 
-func (x *GetConfigResDTO) String() string {
+func (x *GetConfigReqDTO) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetConfigResDTO) ProtoMessage() {}
+func (*GetConfigReqDTO) ProtoMessage() {}
 
-func (x *GetConfigResDTO) ProtoReflect() protoreflect.Message {
+func (x *GetConfigReqDTO) ProtoReflect() protoreflect.Message {
 	mi := &file_protos_GetConfig_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -56,26 +56,26 @@ func (x *GetConfigResDTO) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetConfigResDTO.ProtoReflect.Descriptor instead.
-func (*GetConfigResDTO) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetConfigReqDTO.ProtoReflect.Descriptor instead.
+func (*GetConfigReqDTO) Descriptor() ([]byte, []int) {
 	return file_protos_GetConfig_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *GetConfigResDTO) GetOffset() int32 {
+func (x *GetConfigReqDTO) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-func (x *GetConfigResDTO) GetTime() uint32 {
+func (x *GetConfigReqDTO) GetTime() uint32 {
 	if x != nil {
 		return x.Time
 	}
 	return 0
 }
 
-type GetConfigReqDTO struct {
+type GetConfigResDTO struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -144,8 +144,8 @@ type GetConfigReqDTO struct {
 	DtuApPass          string `protobuf:"bytes,62,opt,name=dtu_ap_pass,json=dtuApPass,proto3" json:"dtu_ap_pass,omitempty"`                           // DTU AP password
 }
 
-func (x *GetConfigReqDTO) Reset() {
-	*x = GetConfigReqDTO{}
+func (x *GetConfigResDTO) Reset() {
+	*x = GetConfigResDTO{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_protos_GetConfig_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -153,13 +153,13 @@ func (x *GetConfigReqDTO) Reset() {
 	}
 }
 
-func (x *GetConfigReqDTO) String() string {
+func (x *GetConfigResDTO) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetConfigReqDTO) ProtoMessage() {}
+func (*GetConfigResDTO) ProtoMessage() {}
 
-func (x *GetConfigReqDTO) ProtoReflect() protoreflect.Message {
+func (x *GetConfigResDTO) ProtoReflect() protoreflect.Message {
 	mi := &file_protos_GetConfig_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -171,439 +171,439 @@ func (x *GetConfigReqDTO) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetConfigReqDTO.ProtoReflect.Descriptor instead.
-func (*GetConfigReqDTO) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetConfigResDTO.ProtoReflect.Descriptor instead.
+func (*GetConfigResDTO) Descriptor() ([]byte, []int) {
 	return file_protos_GetConfig_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *GetConfigReqDTO) GetRequestOffset() int32 {
+func (x *GetConfigResDTO) GetRequestOffset() int32 {
 	if x != nil {
 		return x.RequestOffset
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetRequestTime() uint32 {
+func (x *GetConfigResDTO) GetRequestTime() uint32 {
 	if x != nil {
 		return x.RequestTime
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetLockPassword() int32 {
+func (x *GetConfigResDTO) GetLockPassword() int32 {
 	if x != nil {
 		return x.LockPassword
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetLockTime() int32 {
+func (x *GetConfigResDTO) GetLockTime() int32 {
 	if x != nil {
 		return x.LockTime
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetLimitPowerMypower() int32 {
+func (x *GetConfigResDTO) GetLimitPowerMypower() int32 {
 	if x != nil {
 		return x.LimitPowerMypower
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetZeroExport_433Addr() int32 {
+func (x *GetConfigResDTO) GetZeroExport_433Addr() int32 {
 	if x != nil {
 		return x.ZeroExport_433Addr
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetZeroExportEnable() int32 {
+func (x *GetConfigResDTO) GetZeroExportEnable() int32 {
 	if x != nil {
 		return x.ZeroExportEnable
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetNetmodeSelect() int32 {
+func (x *GetConfigResDTO) GetNetmodeSelect() int32 {
 	if x != nil {
 		return x.NetmodeSelect
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetChannelSelect() int32 {
+func (x *GetConfigResDTO) GetChannelSelect() int32 {
 	if x != nil {
 		return x.ChannelSelect
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetServerSendTime() int32 {
+func (x *GetConfigResDTO) GetServerSendTime() int32 {
 	if x != nil {
 		return x.ServerSendTime
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetWifiRssi() int32 {
+func (x *GetConfigResDTO) GetWifiRssi() int32 {
 	if x != nil {
 		return x.WifiRssi
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetServerport() int32 {
+func (x *GetConfigResDTO) GetServerport() int32 {
 	if x != nil {
 		return x.Serverport
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetApnSet() string {
+func (x *GetConfigResDTO) GetApnSet() string {
 	if x != nil {
 		return x.ApnSet
 	}
 	return ""
 }
 
-func (x *GetConfigReqDTO) GetMeterKind() string {
+func (x *GetConfigResDTO) GetMeterKind() string {
 	if x != nil {
 		return x.MeterKind
 	}
 	return ""
 }
 
-func (x *GetConfigReqDTO) GetMeterInterface() string {
+func (x *GetConfigResDTO) GetMeterInterface() string {
 	if x != nil {
 		return x.MeterInterface
 	}
 	return ""
 }
 
-func (x *GetConfigReqDTO) GetWifiSsid() string {
+func (x *GetConfigResDTO) GetWifiSsid() string {
 	if x != nil {
 		return x.WifiSsid
 	}
 	return ""
 }
 
-func (x *GetConfigReqDTO) GetWifiPassword() string {
+func (x *GetConfigResDTO) GetWifiPassword() string {
 	if x != nil {
 		return x.WifiPassword
 	}
 	return ""
 }
 
-func (x *GetConfigReqDTO) GetServerDomainName() string {
+func (x *GetConfigResDTO) GetServerDomainName() string {
 	if x != nil {
 		return x.ServerDomainName
 	}
 	return ""
 }
 
-func (x *GetConfigReqDTO) GetInvType() int32 {
+func (x *GetConfigResDTO) GetInvType() int32 {
 	if x != nil {
 		return x.InvType
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetDtuSn() string {
+func (x *GetConfigResDTO) GetDtuSn() string {
 	if x != nil {
 		return x.DtuSn
 	}
 	return ""
 }
 
-func (x *GetConfigReqDTO) GetAccessModel() int32 {
+func (x *GetConfigResDTO) GetAccessModel() int32 {
 	if x != nil {
 		return x.AccessModel
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetMac_0() int32 {
+func (x *GetConfigResDTO) GetMac_0() int32 {
 	if x != nil {
 		return x.Mac_0
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetMac_1() int32 {
+func (x *GetConfigResDTO) GetMac_1() int32 {
 	if x != nil {
 		return x.Mac_1
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetMac_2() int32 {
+func (x *GetConfigResDTO) GetMac_2() int32 {
 	if x != nil {
 		return x.Mac_2
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetMac_3() int32 {
+func (x *GetConfigResDTO) GetMac_3() int32 {
 	if x != nil {
 		return x.Mac_3
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetDhcpSwitch() int32 {
+func (x *GetConfigResDTO) GetDhcpSwitch() int32 {
 	if x != nil {
 		return x.DhcpSwitch
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetIpAddr_0() int32 {
+func (x *GetConfigResDTO) GetIpAddr_0() int32 {
 	if x != nil {
 		return x.IpAddr_0
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetIpAddr_1() int32 {
+func (x *GetConfigResDTO) GetIpAddr_1() int32 {
 	if x != nil {
 		return x.IpAddr_1
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetIpAddr_2() int32 {
+func (x *GetConfigResDTO) GetIpAddr_2() int32 {
 	if x != nil {
 		return x.IpAddr_2
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetIpAddr_3() int32 {
+func (x *GetConfigResDTO) GetIpAddr_3() int32 {
 	if x != nil {
 		return x.IpAddr_3
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetSubnetMask_0() int32 {
+func (x *GetConfigResDTO) GetSubnetMask_0() int32 {
 	if x != nil {
 		return x.SubnetMask_0
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetSubnetMask_1() int32 {
+func (x *GetConfigResDTO) GetSubnetMask_1() int32 {
 	if x != nil {
 		return x.SubnetMask_1
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetSubnetMask_2() int32 {
+func (x *GetConfigResDTO) GetSubnetMask_2() int32 {
 	if x != nil {
 		return x.SubnetMask_2
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetSubnetMask_3() int32 {
+func (x *GetConfigResDTO) GetSubnetMask_3() int32 {
 	if x != nil {
 		return x.SubnetMask_3
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetDefaultGateway_0() int32 {
+func (x *GetConfigResDTO) GetDefaultGateway_0() int32 {
 	if x != nil {
 		return x.DefaultGateway_0
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetDefaultGateway_1() int32 {
+func (x *GetConfigResDTO) GetDefaultGateway_1() int32 {
 	if x != nil {
 		return x.DefaultGateway_1
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetDefaultGateway_2() int32 {
+func (x *GetConfigResDTO) GetDefaultGateway_2() int32 {
 	if x != nil {
 		return x.DefaultGateway_2
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetDefaultGateway_3() int32 {
+func (x *GetConfigResDTO) GetDefaultGateway_3() int32 {
 	if x != nil {
 		return x.DefaultGateway_3
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetKaNub() string {
+func (x *GetConfigResDTO) GetKaNub() string {
 	if x != nil {
 		return x.KaNub
 	}
 	return ""
 }
 
-func (x *GetConfigReqDTO) GetApnName() string {
+func (x *GetConfigResDTO) GetApnName() string {
 	if x != nil {
 		return x.ApnName
 	}
 	return ""
 }
 
-func (x *GetConfigReqDTO) GetApnPassword() string {
+func (x *GetConfigResDTO) GetApnPassword() string {
 	if x != nil {
 		return x.ApnPassword
 	}
 	return ""
 }
 
-func (x *GetConfigReqDTO) GetSub1GSweepSwitch() int32 {
+func (x *GetConfigResDTO) GetSub1GSweepSwitch() int32 {
 	if x != nil {
 		return x.Sub1GSweepSwitch
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetSub1GWorkChannel() int32 {
+func (x *GetConfigResDTO) GetSub1GWorkChannel() int32 {
 	if x != nil {
 		return x.Sub1GWorkChannel
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetCableDns_0() int32 {
+func (x *GetConfigResDTO) GetCableDns_0() int32 {
 	if x != nil {
 		return x.CableDns_0
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetCableDns_1() int32 {
+func (x *GetConfigResDTO) GetCableDns_1() int32 {
 	if x != nil {
 		return x.CableDns_1
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetCableDns_2() int32 {
+func (x *GetConfigResDTO) GetCableDns_2() int32 {
 	if x != nil {
 		return x.CableDns_2
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetCableDns_3() int32 {
+func (x *GetConfigResDTO) GetCableDns_3() int32 {
 	if x != nil {
 		return x.CableDns_3
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetWifiIpAddr_0() int32 {
+func (x *GetConfigResDTO) GetWifiIpAddr_0() int32 {
 	if x != nil {
 		return x.WifiIpAddr_0
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetWifiIpAddr_1() int32 {
+func (x *GetConfigResDTO) GetWifiIpAddr_1() int32 {
 	if x != nil {
 		return x.WifiIpAddr_1
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetWifiIpAddr_2() int32 {
+func (x *GetConfigResDTO) GetWifiIpAddr_2() int32 {
 	if x != nil {
 		return x.WifiIpAddr_2
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetWifiIpAddr_3() int32 {
+func (x *GetConfigResDTO) GetWifiIpAddr_3() int32 {
 	if x != nil {
 		return x.WifiIpAddr_3
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetMac_4() int32 {
+func (x *GetConfigResDTO) GetMac_4() int32 {
 	if x != nil {
 		return x.Mac_4
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetMac_5() int32 {
+func (x *GetConfigResDTO) GetMac_5() int32 {
 	if x != nil {
 		return x.Mac_5
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetWifiMac_0() int32 {
+func (x *GetConfigResDTO) GetWifiMac_0() int32 {
 	if x != nil {
 		return x.WifiMac_0
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetWifiMac_1() int32 {
+func (x *GetConfigResDTO) GetWifiMac_1() int32 {
 	if x != nil {
 		return x.WifiMac_1
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetWifiMac_2() int32 {
+func (x *GetConfigResDTO) GetWifiMac_2() int32 {
 	if x != nil {
 		return x.WifiMac_2
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetWifiMac_3() int32 {
+func (x *GetConfigResDTO) GetWifiMac_3() int32 {
 	if x != nil {
 		return x.WifiMac_3
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetWifiMac_4() int32 {
+func (x *GetConfigResDTO) GetWifiMac_4() int32 {
 	if x != nil {
 		return x.WifiMac_4
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetWifiMac_5() int32 {
+func (x *GetConfigResDTO) GetWifiMac_5() int32 {
 	if x != nil {
 		return x.WifiMac_5
 	}
 	return 0
 }
 
-func (x *GetConfigReqDTO) GetGprsImei() string {
+func (x *GetConfigResDTO) GetGprsImei() string {
 	if x != nil {
 		return x.GprsImei
 	}
 	return ""
 }
 
-func (x *GetConfigReqDTO) GetDtuApSsid() string {
+func (x *GetConfigResDTO) GetDtuApSsid() string {
 	if x != nil {
 		return x.DtuApSsid
 	}
 	return ""
 }
 
-func (x *GetConfigReqDTO) GetDtuApPass() string {
+func (x *GetConfigResDTO) GetDtuApPass() string {
 	if x != nil {
 		return x.DtuApPass
 	}
@@ -615,11 +615,11 @@ var File_protos_GetConfig_proto protoreflect.FileDescriptor
 var file_protos_GetConfig_proto_rawDesc = []byte{
 	0x0a, 0x16, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6e, 0x66,
 	0x69, 0x67, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x3d, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x43,
-	0x6f, 0x6e, 0x66, 0x69, 0x67, 0x52, 0x65, 0x73, 0x44, 0x54, 0x4f, 0x12, 0x16, 0x0a, 0x06, 0x6f,
+	0x6f, 0x6e, 0x66, 0x69, 0x67, 0x52, 0x65, 0x71, 0x44, 0x54, 0x4f, 0x12, 0x16, 0x0a, 0x06, 0x6f,
 	0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x6f, 0x66, 0x66,
 	0x73, 0x65, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
 	0x0d, 0x52, 0x04, 0x74, 0x69, 0x6d, 0x65, 0x22, 0xac, 0x10, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x43,
-	0x6f, 0x6e, 0x66, 0x69, 0x67, 0x52, 0x65, 0x71, 0x44, 0x54, 0x4f, 0x12, 0x25, 0x0a, 0x0e, 0x72,
+	0x6f, 0x6e, 0x66, 0x69, 0x67, 0x52, 0x65, 0x73, 0x44, 0x54, 0x4f, 0x12, 0x25, 0x0a, 0x0e, 0x72,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x5f, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x05, 0x52, 0x0d, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x4f, 0x66, 0x66, 0x73,
 	0x65, 0x74, 0x12, 0x21, 0x0a, 0x0c, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x5f, 0x74, 0x69,
@@ -769,8 +769,8 @@ func file_protos_GetConfig_proto_rawDescGZIP() []byte {
 
 var file_protos_GetConfig_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_protos_GetConfig_proto_goTypes = []any{
-	(*GetConfigResDTO)(nil), // 0: GetConfigResDTO
-	(*GetConfigReqDTO)(nil), // 1: GetConfigReqDTO
+	(*GetConfigReqDTO)(nil), // 0: GetConfigReqDTO
+	(*GetConfigResDTO)(nil), // 1: GetConfigResDTO
 }
 var file_protos_GetConfig_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
@@ -787,7 +787,7 @@ func file_protos_GetConfig_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_protos_GetConfig_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*GetConfigResDTO); i {
+			switch v := v.(*GetConfigReqDTO); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -799,7 +799,7 @@ func file_protos_GetConfig_proto_init() {
 			}
 		}
 		file_protos_GetConfig_proto_msgTypes[1].Exporter = func(v any, i int) any {
-			switch v := v.(*GetConfigReqDTO); i {
+			switch v := v.(*GetConfigResDTO); i {
 			case 0:
 				return &v.state
 			case 1:

@@ -3,14 +3,14 @@ syntax = "proto3";
 option go_package = "hoymiles/models";
 option csharp_namespace = "Hoymiles.Models";
 
-message AppGetHistPowerResDTO {
+message AppGetHistPowerReqDTO {
   int32 control_point = 1;       // Control point identifier
   int32 offset = 2;              // Offset value
   uint32 requested_time = 3;     // Time requested
   uint32 requested_day = 4;      // Day requested
 }
 
-message AppGetHistPowerReqDTO {
+message AppGetHistPowerResDTO {
   int64 serial_number = 1;       // Device serial number
   int32 access_point = 2;        // Access point identifier
   int32 control_point = 3;       // Control point identifier

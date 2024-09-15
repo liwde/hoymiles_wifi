@@ -37,10 +37,23 @@ type (
 	}
 	Client interface {
 		CloseConnection()
-		GetRealDataNew(dto models.RealDataNewReqDTO) models.RealDataNewResDTO
+		GetRealDataNew(request *models.RealDataNewReqDTO) (*models.RealDataNewResDTO, error)
+		GetRealData(request *models.RealDataReqDTO) (*models.RealDataResDTO, error)
+		GetConfig(request *models.GetConfigReqDTO) (*models.GetConfigResDTO, error)
+		GetNetworkInfo(request *models.NetworkInfoReqDTO) (*models.NetworkInfoResDTO, error)
+		GetAppInformationData(request *models.APPInfoDataReqDTO) (*models.APPInfoDataResDTO, error)
+		GetAppHistPower(request *models.AppGetHistPowerReqDTO) (*models.AppGetHistPowerResDTO, error)
+		GetAppHeartbeat(request *models.HBReqDTO) (*models.HBResDTO, error)
 	}
 )
 
+// NewClient Create a Hoymiles Wifi Client
+func NewClientDefault(host string) *ClientData {
+	return NewClient(host, common.DTU_PORT)
+}
+
+// NewClient Create a Hoymiles Wifi Client
+// default port is 10081
 func NewClient(host string, port int32) *ClientData {
 	connectionData := &ConnectionData{
 		Host:     host,
@@ -48,13 +61,96 @@ func NewClient(host string, port int32) *ClientData {
 		Uri:      fmt.Sprintf("%s:%d", host, port),
 		Sequence: 0,
 	}
-
 	return &ClientData{connectionData: connectionData}
 }
 
-func (client *ClientData) GetRealDataNew(request *models.RealDataNewReqDTO) (*models.RealDataNewResDTO, error) {
-
+func (client *ClientData) GetAppHeartbeat(request *models.HBReqDTO) (*models.HBResDTO, error) {
 	request.Offset = common.OFFSET
+
+	var err error = nil
+	var response proto.Message = &models.HBResDTO{}
+
+	response, err = client.sendRequestProtobuf(common.CMD_REAL_DATA_RES_DTO, request, response)
+	if err != nil {
+		return nil, err
+	}
+
+	return response.(*models.HBResDTO), nil
+}
+
+func (client *ClientData) GetAppHistPower(request *models.AppGetHistPowerReqDTO) (*models.AppGetHistPowerResDTO, error) {
+	request.Offset = common.OFFSET
+
+	var err error = nil
+	var response proto.Message = &models.AppGetHistPowerResDTO{}
+
+	response, err = client.sendRequestProtobuf(common.CMD_REAL_DATA_RES_DTO, request, response)
+	if err != nil {
+		return nil, err
+	}
+
+	return response.(*models.AppGetHistPowerResDTO), nil
+}
+
+func (client *ClientData) GetAppInformationData(request *models.APPInfoDataReqDTO) (*models.APPInfoDataResDTO, error) {
+	request.Offset = common.OFFSET
+
+	var err error = nil
+	var response proto.Message = &models.APPInfoDataResDTO{}
+
+	response, err = client.sendRequestProtobuf(common.CMD_REAL_DATA_RES_DTO, request, response)
+	if err != nil {
+		return nil, err
+	}
+
+	return response.(*models.APPInfoDataResDTO), nil
+}
+
+func (client *ClientData) GetNetworkInfo(request *models.NetworkInfoReqDTO) (*models.NetworkInfoResDTO, error) {
+	request.Offset = common.OFFSET
+
+	var err error = nil
+	var response proto.Message = &models.NetworkInfoResDTO{}
+
+	response, err = client.sendRequestProtobuf(common.CMD_REAL_DATA_RES_DTO, request, response)
+	if err != nil {
+		return nil, err
+	}
+
+	return response.(*models.NetworkInfoResDTO), nil
+}
+
+func (client *ClientData) GetConfig(request *models.GetConfigReqDTO) (*models.GetConfigResDTO, error) {
+	request.Offset = common.OFFSET
+
+	var err error = nil
+	var response proto.Message = &models.GetConfigResDTO{}
+
+	response, err = client.sendRequestProtobuf(common.CMD_REAL_DATA_RES_DTO, request, response)
+	if err != nil {
+		return nil, err
+	}
+
+	return response.(*models.GetConfigResDTO), nil
+}
+
+func (client *ClientData) GetRealData(request *models.RealDataReqDTO) (*models.RealDataResDTO, error) {
+	request.Offset = common.OFFSET
+
+	var err error = nil
+	var response proto.Message = &models.RealDataResDTO{}
+
+	response, err = client.sendRequestProtobuf(common.CMD_REAL_DATA_RES_DTO, request, response)
+	if err != nil {
+		return nil, err
+	}
+
+	return response.(*models.RealDataResDTO), nil
+}
+
+func (client *ClientData) GetRealDataNew(request *models.RealDataNewReqDTO) (*models.RealDataNewResDTO, error) {
+	request.Offset = common.OFFSET
+
 	var err error = nil
 	var response proto.Message = &models.RealDataNewResDTO{}
 

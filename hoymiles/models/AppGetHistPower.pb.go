@@ -20,7 +20,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type AppGetHistPowerResDTO struct {
+type AppGetHistPowerReqDTO struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -31,8 +31,8 @@ type AppGetHistPowerResDTO struct {
 	RequestedDay  uint32 `protobuf:"varint,4,opt,name=requested_day,json=requestedDay,proto3" json:"requested_day,omitempty"`    // Day requested
 }
 
-func (x *AppGetHistPowerResDTO) Reset() {
-	*x = AppGetHistPowerResDTO{}
+func (x *AppGetHistPowerReqDTO) Reset() {
+	*x = AppGetHistPowerReqDTO{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_protos_AppGetHistPower_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -40,13 +40,13 @@ func (x *AppGetHistPowerResDTO) Reset() {
 	}
 }
 
-func (x *AppGetHistPowerResDTO) String() string {
+func (x *AppGetHistPowerReqDTO) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*AppGetHistPowerResDTO) ProtoMessage() {}
+func (*AppGetHistPowerReqDTO) ProtoMessage() {}
 
-func (x *AppGetHistPowerResDTO) ProtoReflect() protoreflect.Message {
+func (x *AppGetHistPowerReqDTO) ProtoReflect() protoreflect.Message {
 	mi := &file_protos_AppGetHistPower_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -58,40 +58,40 @@ func (x *AppGetHistPowerResDTO) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AppGetHistPowerResDTO.ProtoReflect.Descriptor instead.
-func (*AppGetHistPowerResDTO) Descriptor() ([]byte, []int) {
+// Deprecated: Use AppGetHistPowerReqDTO.ProtoReflect.Descriptor instead.
+func (*AppGetHistPowerReqDTO) Descriptor() ([]byte, []int) {
 	return file_protos_AppGetHistPower_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *AppGetHistPowerResDTO) GetControlPoint() int32 {
+func (x *AppGetHistPowerReqDTO) GetControlPoint() int32 {
 	if x != nil {
 		return x.ControlPoint
 	}
 	return 0
 }
 
-func (x *AppGetHistPowerResDTO) GetOffset() int32 {
+func (x *AppGetHistPowerReqDTO) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-func (x *AppGetHistPowerResDTO) GetRequestedTime() uint32 {
+func (x *AppGetHistPowerReqDTO) GetRequestedTime() uint32 {
 	if x != nil {
 		return x.RequestedTime
 	}
 	return 0
 }
 
-func (x *AppGetHistPowerResDTO) GetRequestedDay() uint32 {
+func (x *AppGetHistPowerReqDTO) GetRequestedDay() uint32 {
 	if x != nil {
 		return x.RequestedDay
 	}
 	return 0
 }
 
-type AppGetHistPowerReqDTO struct {
+type AppGetHistPowerResDTO struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -112,8 +112,8 @@ type AppGetHistPowerReqDTO struct {
 	WarningNumber uint32  `protobuf:"varint,14,opt,name=warning_number,json=warningNumber,proto3" json:"warning_number,omitempty"`  // Warning number
 }
 
-func (x *AppGetHistPowerReqDTO) Reset() {
-	*x = AppGetHistPowerReqDTO{}
+func (x *AppGetHistPowerResDTO) Reset() {
+	*x = AppGetHistPowerResDTO{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_protos_AppGetHistPower_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -121,13 +121,13 @@ func (x *AppGetHistPowerReqDTO) Reset() {
 	}
 }
 
-func (x *AppGetHistPowerReqDTO) String() string {
+func (x *AppGetHistPowerResDTO) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*AppGetHistPowerReqDTO) ProtoMessage() {}
+func (*AppGetHistPowerResDTO) ProtoMessage() {}
 
-func (x *AppGetHistPowerReqDTO) ProtoReflect() protoreflect.Message {
+func (x *AppGetHistPowerResDTO) ProtoReflect() protoreflect.Message {
 	mi := &file_protos_AppGetHistPower_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -139,103 +139,103 @@ func (x *AppGetHistPowerReqDTO) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use AppGetHistPowerReqDTO.ProtoReflect.Descriptor instead.
-func (*AppGetHistPowerReqDTO) Descriptor() ([]byte, []int) {
+// Deprecated: Use AppGetHistPowerResDTO.ProtoReflect.Descriptor instead.
+func (*AppGetHistPowerResDTO) Descriptor() ([]byte, []int) {
 	return file_protos_AppGetHistPower_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *AppGetHistPowerReqDTO) GetSerialNumber() int64 {
+func (x *AppGetHistPowerResDTO) GetSerialNumber() int64 {
 	if x != nil {
 		return x.SerialNumber
 	}
 	return 0
 }
 
-func (x *AppGetHistPowerReqDTO) GetAccessPoint() int32 {
+func (x *AppGetHistPowerResDTO) GetAccessPoint() int32 {
 	if x != nil {
 		return x.AccessPoint
 	}
 	return 0
 }
 
-func (x *AppGetHistPowerReqDTO) GetControlPoint() int32 {
+func (x *AppGetHistPowerResDTO) GetControlPoint() int32 {
 	if x != nil {
 		return x.ControlPoint
 	}
 	return 0
 }
 
-func (x *AppGetHistPowerReqDTO) GetOffset() int32 {
+func (x *AppGetHistPowerResDTO) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-func (x *AppGetHistPowerReqDTO) GetRequestTime() uint32 {
+func (x *AppGetHistPowerResDTO) GetRequestTime() uint32 {
 	if x != nil {
 		return x.RequestTime
 	}
 	return 0
 }
 
-func (x *AppGetHistPowerReqDTO) GetStartTime() uint32 {
+func (x *AppGetHistPowerResDTO) GetStartTime() uint32 {
 	if x != nil {
 		return x.StartTime
 	}
 	return 0
 }
 
-func (x *AppGetHistPowerReqDTO) GetLongTermStart() uint32 {
+func (x *AppGetHistPowerResDTO) GetLongTermStart() uint32 {
 	if x != nil {
 		return x.LongTermStart
 	}
 	return 0
 }
 
-func (x *AppGetHistPowerReqDTO) GetAbsoluteStart() uint32 {
+func (x *AppGetHistPowerResDTO) GetAbsoluteStart() uint32 {
 	if x != nil {
 		return x.AbsoluteStart
 	}
 	return 0
 }
 
-func (x *AppGetHistPowerReqDTO) GetStepTime() uint32 {
+func (x *AppGetHistPowerResDTO) GetStepTime() uint32 {
 	if x != nil {
 		return x.StepTime
 	}
 	return 0
 }
 
-func (x *AppGetHistPowerReqDTO) GetRelativePower() uint32 {
+func (x *AppGetHistPowerResDTO) GetRelativePower() uint32 {
 	if x != nil {
 		return x.RelativePower
 	}
 	return 0
 }
 
-func (x *AppGetHistPowerReqDTO) GetTotalEnergy() uint32 {
+func (x *AppGetHistPowerResDTO) GetTotalEnergy() uint32 {
 	if x != nil {
 		return x.TotalEnergy
 	}
 	return 0
 }
 
-func (x *AppGetHistPowerReqDTO) GetDailyEnergy() uint32 {
+func (x *AppGetHistPowerResDTO) GetDailyEnergy() uint32 {
 	if x != nil {
 		return x.DailyEnergy
 	}
 	return 0
 }
 
-func (x *AppGetHistPowerReqDTO) GetPowerArray() []int32 {
+func (x *AppGetHistPowerResDTO) GetPowerArray() []int32 {
 	if x != nil {
 		return x.PowerArray
 	}
 	return nil
 }
 
-func (x *AppGetHistPowerReqDTO) GetWarningNumber() uint32 {
+func (x *AppGetHistPowerResDTO) GetWarningNumber() uint32 {
 	if x != nil {
 		return x.WarningNumber
 	}
@@ -248,7 +248,7 @@ var file_protos_AppGetHistPower_proto_rawDesc = []byte{
 	0x0a, 0x1c, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x41, 0x70, 0x70, 0x47, 0x65, 0x74, 0x48,
 	0x69, 0x73, 0x74, 0x50, 0x6f, 0x77, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xa0,
 	0x01, 0x0a, 0x15, 0x41, 0x70, 0x70, 0x47, 0x65, 0x74, 0x48, 0x69, 0x73, 0x74, 0x50, 0x6f, 0x77,
-	0x65, 0x72, 0x52, 0x65, 0x73, 0x44, 0x54, 0x4f, 0x12, 0x23, 0x0a, 0x0d, 0x63, 0x6f, 0x6e, 0x74,
+	0x65, 0x72, 0x52, 0x65, 0x71, 0x44, 0x54, 0x4f, 0x12, 0x23, 0x0a, 0x0d, 0x63, 0x6f, 0x6e, 0x74,
 	0x72, 0x6f, 0x6c, 0x5f, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52,
 	0x0c, 0x63, 0x6f, 0x6e, 0x74, 0x72, 0x6f, 0x6c, 0x50, 0x6f, 0x69, 0x6e, 0x74, 0x12, 0x16, 0x0a,
 	0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x06, 0x6f,
@@ -258,7 +258,7 @@ var file_protos_AppGetHistPower_proto_rawDesc = []byte{
 	0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x64, 0x5f, 0x64, 0x61, 0x79, 0x18, 0x04, 0x20,
 	0x01, 0x28, 0x0d, 0x52, 0x0c, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x64, 0x44, 0x61,
 	0x79, 0x22, 0xff, 0x03, 0x0a, 0x15, 0x41, 0x70, 0x70, 0x47, 0x65, 0x74, 0x48, 0x69, 0x73, 0x74,
-	0x50, 0x6f, 0x77, 0x65, 0x72, 0x52, 0x65, 0x71, 0x44, 0x54, 0x4f, 0x12, 0x23, 0x0a, 0x0d, 0x73,
+	0x50, 0x6f, 0x77, 0x65, 0x72, 0x52, 0x65, 0x73, 0x44, 0x54, 0x4f, 0x12, 0x23, 0x0a, 0x0d, 0x73,
 	0x65, 0x72, 0x69, 0x61, 0x6c, 0x5f, 0x6e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01,
 	0x28, 0x03, 0x52, 0x0c, 0x73, 0x65, 0x72, 0x69, 0x61, 0x6c, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72,
 	0x12, 0x21, 0x0a, 0x0c, 0x61, 0x63, 0x63, 0x65, 0x73, 0x73, 0x5f, 0x70, 0x6f, 0x69, 0x6e, 0x74,
@@ -308,8 +308,8 @@ func file_protos_AppGetHistPower_proto_rawDescGZIP() []byte {
 
 var file_protos_AppGetHistPower_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_protos_AppGetHistPower_proto_goTypes = []any{
-	(*AppGetHistPowerResDTO)(nil), // 0: AppGetHistPowerResDTO
-	(*AppGetHistPowerReqDTO)(nil), // 1: AppGetHistPowerReqDTO
+	(*AppGetHistPowerReqDTO)(nil), // 0: AppGetHistPowerReqDTO
+	(*AppGetHistPowerResDTO)(nil), // 1: AppGetHistPowerResDTO
 }
 var file_protos_AppGetHistPower_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
@@ -326,7 +326,7 @@ func file_protos_AppGetHistPower_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_protos_AppGetHistPower_proto_msgTypes[0].Exporter = func(v any, i int) any {
-			switch v := v.(*AppGetHistPowerResDTO); i {
+			switch v := v.(*AppGetHistPowerReqDTO); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -338,7 +338,7 @@ func file_protos_AppGetHistPower_proto_init() {
 			}
 		}
 		file_protos_AppGetHistPower_proto_msgTypes[1].Exporter = func(v any, i int) any {
-			switch v := v.(*AppGetHistPowerReqDTO); i {
+			switch v := v.(*AppGetHistPowerResDTO); i {
 			case 0:
 				return &v.state
 			case 1:

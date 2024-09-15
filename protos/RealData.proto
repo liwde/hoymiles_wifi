@@ -58,7 +58,7 @@ message PvDataMO {
   int32 mi_signal = 24;        // Modulation index signal
 }
 
-message RealDataReqDTO {
+message RealDataResDTO {
   string dtu_sn = 1;                   // DTU serial number
   int32 timestamp = 2;                 // Timestamp of the data
   int32 device_number = 3;             // Device number
@@ -72,7 +72,7 @@ message RealDataReqDTO {
   int32 version = 11;                  // Version number
 }
 
-message RealDataResDTO {
+message RealDataReqDTO {
   string time_ymd_hms = 1; // Timestamp in the format YMD_HMS
   int32 package_now = 2;   // Package now
   int32 error_code = 3;    // Error code indicator

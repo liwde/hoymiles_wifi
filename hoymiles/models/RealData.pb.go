@@ -497,7 +497,7 @@ func (x *PvDataMO) GetMiSignal() int32 {
 	return 0
 }
 
-type RealDataReqDTO struct {
+type RealDataResDTO struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -515,131 +515,10 @@ type RealDataReqDTO struct {
 	Version        int32          `protobuf:"varint,11,opt,name=version,proto3" json:"version,omitempty"`                                    // Version number
 }
 
-func (x *RealDataReqDTO) Reset() {
-	*x = RealDataReqDTO{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_RealData_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RealDataReqDTO) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RealDataReqDTO) ProtoMessage() {}
-
-func (x *RealDataReqDTO) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_RealData_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RealDataReqDTO.ProtoReflect.Descriptor instead.
-func (*RealDataReqDTO) Descriptor() ([]byte, []int) {
-	return file_protos_RealData_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *RealDataReqDTO) GetDtuSn() string {
-	if x != nil {
-		return x.DtuSn
-	}
-	return ""
-}
-
-func (x *RealDataReqDTO) GetTimestamp() int32 {
-	if x != nil {
-		return x.Timestamp
-	}
-	return 0
-}
-
-func (x *RealDataReqDTO) GetDeviceNumber() int32 {
-	if x != nil {
-		return x.DeviceNumber
-	}
-	return 0
-}
-
-func (x *RealDataReqDTO) GetPvNumber() int32 {
-	if x != nil {
-		return x.PvNumber
-	}
-	return 0
-}
-
-func (x *RealDataReqDTO) GetPackageNumber() int32 {
-	if x != nil {
-		return x.PackageNumber
-	}
-	return 0
-}
-
-func (x *RealDataReqDTO) GetCurrentPackage() int32 {
-	if x != nil {
-		return x.CurrentPackage
-	}
-	return 0
-}
-
-func (x *RealDataReqDTO) GetCsq() int32 {
-	if x != nil {
-		return x.Csq
-	}
-	return 0
-}
-
-func (x *RealDataReqDTO) GetMeterData() []*MeterDataMO {
-	if x != nil {
-		return x.MeterData
-	}
-	return nil
-}
-
-func (x *RealDataReqDTO) GetRpData() []*RpDataMO {
-	if x != nil {
-		return x.RpData
-	}
-	return nil
-}
-
-func (x *RealDataReqDTO) GetPvData() []*PvDataMO {
-	if x != nil {
-		return x.PvData
-	}
-	return nil
-}
-
-func (x *RealDataReqDTO) GetVersion() int32 {
-	if x != nil {
-		return x.Version
-	}
-	return 0
-}
-
-type RealDataResDTO struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	TimeYmdHms string `protobuf:"bytes,1,opt,name=time_ymd_hms,json=timeYmdHms,proto3" json:"time_ymd_hms,omitempty"` // Timestamp in the format YMD_HMS
-	PackageNow int32  `protobuf:"varint,2,opt,name=package_now,json=packageNow,proto3" json:"package_now,omitempty"`  // Package now
-	ErrorCode  int32  `protobuf:"varint,3,opt,name=error_code,json=errorCode,proto3" json:"error_code,omitempty"`     // Error code indicator
-	Offset     int32  `protobuf:"varint,4,opt,name=offset,proto3" json:"offset,omitempty"`                            // Offset value
-	Time       int32  `protobuf:"varint,5,opt,name=time,proto3" json:"time,omitempty"`                                // Timestamp value
-}
-
 func (x *RealDataResDTO) Reset() {
 	*x = RealDataResDTO{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_RealData_proto_msgTypes[4]
+		mi := &file_protos_RealData_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -652,7 +531,7 @@ func (x *RealDataResDTO) String() string {
 func (*RealDataResDTO) ProtoMessage() {}
 
 func (x *RealDataResDTO) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_RealData_proto_msgTypes[4]
+	mi := &file_protos_RealData_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -665,38 +544,159 @@ func (x *RealDataResDTO) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RealDataResDTO.ProtoReflect.Descriptor instead.
 func (*RealDataResDTO) Descriptor() ([]byte, []int) {
+	return file_protos_RealData_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *RealDataResDTO) GetDtuSn() string {
+	if x != nil {
+		return x.DtuSn
+	}
+	return ""
+}
+
+func (x *RealDataResDTO) GetTimestamp() int32 {
+	if x != nil {
+		return x.Timestamp
+	}
+	return 0
+}
+
+func (x *RealDataResDTO) GetDeviceNumber() int32 {
+	if x != nil {
+		return x.DeviceNumber
+	}
+	return 0
+}
+
+func (x *RealDataResDTO) GetPvNumber() int32 {
+	if x != nil {
+		return x.PvNumber
+	}
+	return 0
+}
+
+func (x *RealDataResDTO) GetPackageNumber() int32 {
+	if x != nil {
+		return x.PackageNumber
+	}
+	return 0
+}
+
+func (x *RealDataResDTO) GetCurrentPackage() int32 {
+	if x != nil {
+		return x.CurrentPackage
+	}
+	return 0
+}
+
+func (x *RealDataResDTO) GetCsq() int32 {
+	if x != nil {
+		return x.Csq
+	}
+	return 0
+}
+
+func (x *RealDataResDTO) GetMeterData() []*MeterDataMO {
+	if x != nil {
+		return x.MeterData
+	}
+	return nil
+}
+
+func (x *RealDataResDTO) GetRpData() []*RpDataMO {
+	if x != nil {
+		return x.RpData
+	}
+	return nil
+}
+
+func (x *RealDataResDTO) GetPvData() []*PvDataMO {
+	if x != nil {
+		return x.PvData
+	}
+	return nil
+}
+
+func (x *RealDataResDTO) GetVersion() int32 {
+	if x != nil {
+		return x.Version
+	}
+	return 0
+}
+
+type RealDataReqDTO struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TimeYmdHms string `protobuf:"bytes,1,opt,name=time_ymd_hms,json=timeYmdHms,proto3" json:"time_ymd_hms,omitempty"` // Timestamp in the format YMD_HMS
+	PackageNow int32  `protobuf:"varint,2,opt,name=package_now,json=packageNow,proto3" json:"package_now,omitempty"`  // Package now
+	ErrorCode  int32  `protobuf:"varint,3,opt,name=error_code,json=errorCode,proto3" json:"error_code,omitempty"`     // Error code indicator
+	Offset     int32  `protobuf:"varint,4,opt,name=offset,proto3" json:"offset,omitempty"`                            // Offset value
+	Time       int32  `protobuf:"varint,5,opt,name=time,proto3" json:"time,omitempty"`                                // Timestamp value
+}
+
+func (x *RealDataReqDTO) Reset() {
+	*x = RealDataReqDTO{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_protos_RealData_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *RealDataReqDTO) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RealDataReqDTO) ProtoMessage() {}
+
+func (x *RealDataReqDTO) ProtoReflect() protoreflect.Message {
+	mi := &file_protos_RealData_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RealDataReqDTO.ProtoReflect.Descriptor instead.
+func (*RealDataReqDTO) Descriptor() ([]byte, []int) {
 	return file_protos_RealData_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *RealDataResDTO) GetTimeYmdHms() string {
+func (x *RealDataReqDTO) GetTimeYmdHms() string {
 	if x != nil {
 		return x.TimeYmdHms
 	}
 	return ""
 }
 
-func (x *RealDataResDTO) GetPackageNow() int32 {
+func (x *RealDataReqDTO) GetPackageNow() int32 {
 	if x != nil {
 		return x.PackageNow
 	}
 	return 0
 }
 
-func (x *RealDataResDTO) GetErrorCode() int32 {
+func (x *RealDataReqDTO) GetErrorCode() int32 {
 	if x != nil {
 		return x.ErrorCode
 	}
 	return 0
 }
 
-func (x *RealDataResDTO) GetOffset() int32 {
+func (x *RealDataReqDTO) GetOffset() int32 {
 	if x != nil {
 		return x.Offset
 	}
 	return 0
 }
 
-func (x *RealDataResDTO) GetTime() int32 {
+func (x *RealDataReqDTO) GetTime() int32 {
 	if x != nil {
 		return x.Time
 	}
@@ -809,7 +809,7 @@ var file_protos_RealData_proto_rawDesc = []byte{
 	0x05, 0x52, 0x08, 0x70, 0x76, 0x45, 0x6e, 0x65, 0x72, 0x67, 0x79, 0x12, 0x1b, 0x0a, 0x09, 0x6d,
 	0x69, 0x5f, 0x73, 0x69, 0x67, 0x6e, 0x61, 0x6c, 0x18, 0x18, 0x20, 0x01, 0x28, 0x05, 0x52, 0x08,
 	0x6d, 0x69, 0x53, 0x69, 0x67, 0x6e, 0x61, 0x6c, 0x22, 0xf8, 0x02, 0x0a, 0x0e, 0x52, 0x65, 0x61,
-	0x6c, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x71, 0x44, 0x54, 0x4f, 0x12, 0x15, 0x0a, 0x06, 0x64,
+	0x6c, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x73, 0x44, 0x54, 0x4f, 0x12, 0x15, 0x0a, 0x06, 0x64,
 	0x74, 0x75, 0x5f, 0x73, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x64, 0x74, 0x75,
 	0x53, 0x6e, 0x12, 0x1c, 0x0a, 0x09, 0x74, 0x69, 0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x18,
 	0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x09, 0x74, 0x69, 0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70,
@@ -833,7 +833,7 @@ var file_protos_RealData_proto_rawDesc = []byte{
 	0x4f, 0x52, 0x06, 0x70, 0x76, 0x44, 0x61, 0x74, 0x61, 0x12, 0x18, 0x0a, 0x07, 0x76, 0x65, 0x72,
 	0x73, 0x69, 0x6f, 0x6e, 0x18, 0x0b, 0x20, 0x01, 0x28, 0x05, 0x52, 0x07, 0x76, 0x65, 0x72, 0x73,
 	0x69, 0x6f, 0x6e, 0x22, 0x9e, 0x01, 0x0a, 0x0e, 0x52, 0x65, 0x61, 0x6c, 0x44, 0x61, 0x74, 0x61,
-	0x52, 0x65, 0x73, 0x44, 0x54, 0x4f, 0x12, 0x20, 0x0a, 0x0c, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x79,
+	0x52, 0x65, 0x71, 0x44, 0x54, 0x4f, 0x12, 0x20, 0x0a, 0x0c, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x79,
 	0x6d, 0x64, 0x5f, 0x68, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x74, 0x69,
 	0x6d, 0x65, 0x59, 0x6d, 0x64, 0x48, 0x6d, 0x73, 0x12, 0x1f, 0x0a, 0x0b, 0x70, 0x61, 0x63, 0x6b,
 	0x61, 0x67, 0x65, 0x5f, 0x6e, 0x6f, 0x77, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0a, 0x70,
@@ -865,13 +865,13 @@ var file_protos_RealData_proto_goTypes = []any{
 	(*MeterDataMO)(nil),    // 0: MeterDataMO
 	(*RpDataMO)(nil),       // 1: RpDataMO
 	(*PvDataMO)(nil),       // 2: PvDataMO
-	(*RealDataReqDTO)(nil), // 3: RealDataReqDTO
-	(*RealDataResDTO)(nil), // 4: RealDataResDTO
+	(*RealDataResDTO)(nil), // 3: RealDataResDTO
+	(*RealDataReqDTO)(nil), // 4: RealDataReqDTO
 }
 var file_protos_RealData_proto_depIdxs = []int32{
-	0, // 0: RealDataReqDTO.meter_data:type_name -> MeterDataMO
-	1, // 1: RealDataReqDTO.rp_data:type_name -> RpDataMO
-	2, // 2: RealDataReqDTO.pv_data:type_name -> PvDataMO
+	0, // 0: RealDataResDTO.meter_data:type_name -> MeterDataMO
+	1, // 1: RealDataResDTO.rp_data:type_name -> RpDataMO
+	2, // 2: RealDataResDTO.pv_data:type_name -> PvDataMO
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type
 	3, // [3:3] is the sub-list for extension type_name
@@ -922,7 +922,7 @@ func file_protos_RealData_proto_init() {
 			}
 		}
 		file_protos_RealData_proto_msgTypes[3].Exporter = func(v any, i int) any {
-			switch v := v.(*RealDataReqDTO); i {
+			switch v := v.(*RealDataResDTO); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -934,7 +934,7 @@ func file_protos_RealData_proto_init() {
 			}
 		}
 		file_protos_RealData_proto_msgTypes[4].Exporter = func(v any, i int) any {
-			switch v := v.(*RealDataResDTO); i {
+			switch v := v.(*RealDataReqDTO); i {
 			case 0:
 				return &v.state
 			case 1:

@@ -3,7 +3,7 @@ syntax = "proto3";
 option go_package = "hoymiles/models";
 option csharp_namespace = "Hoymiles.Models";
 
-message NetworkInfoReqDTO {
+message NetworkInfoResDTO {
   string dtu_sn = 1;          // DTU serial number
   uint32 time = 2;            // Timestamp of the request
   int32 net_set_mod = 3;      // Network setting mode
@@ -16,7 +16,7 @@ message NetworkInfoReqDTO {
   int32 ap_set_state = 10;    // Access Point (AP) setting state
 }
 
-message NetworkInfoResDTO {
+message NetworkInfoReqDTO {
   int32 offset = 1;           // Offset value for response
   uint32 time = 2;            // Timestamp of the response
 }

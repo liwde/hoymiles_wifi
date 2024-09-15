@@ -3,12 +3,12 @@ syntax = "proto3";
 option go_package = "hoymiles/models";
 option csharp_namespace = "Hoymiles.Models";
 
-message GetConfigResDTO {
+message GetConfigReqDTO {
   int32 offset = 1;                     // Offset in the response
   uint32 time = 2;                      // Timestamp of the response
 }
 
-message GetConfigReqDTO {
+message GetConfigResDTO {
   int32 request_offset = 1;              // Offset in the request
   uint32 request_time = 2;               // Timestamp of the request
   int32 lock_password = 3;               // Lock password
