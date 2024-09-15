@@ -10,5 +10,3 @@ require (
 )
 
 require github.com/google/go-cmp v0.6.0 // indirect
-
-replace github.com/grid-x/modbus => github.com/evcc-io/modbus v0.0.0-20240503125516-9fd99fe0e438

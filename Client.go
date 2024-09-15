@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"github.com/BLun78/hoymiles_wifi/common"
 	"github.com/BLun78/hoymiles_wifi/hoymiles/models"
-	"github.com/basvdlei/gotsmart/crc16"
 	"google.golang.org/protobuf/proto"
 	"net"
 	"time"
@@ -43,7 +42,6 @@ type (
 )
 
 func NewClient(host string, port int32) *ClientData {
-
 	connectionData := &ConnectionData{
 		Host:     host,
 		Port:     port,
@@ -56,10 +54,11 @@ func NewClient(host string, port int32) *ClientData {
 
 func (client *ClientData) GetRealDataNew(request *models.RealDataNewReqDTO) (*models.RealDataNewResDTO, error) {
 
+	request.Offset = common.OFFSET
 	var err error = nil
 	var response proto.Message = &models.RealDataNewResDTO{}
 
-	response, err = client.sendRequestProtobuf(common.CMD_REAL_DATA_RES_DTO, request, response)
+	response, err = client.sendRequestProtobuf(common.CMD_REAL_RES_DTO, request, response)
 	if err != nil {
 		return nil, err
 	}
@@ -136,7 +135,7 @@ func (client *ClientData) sendRequest(command []byte, message []byte) ([]byte, e
 func getByteMessage(request *requestData) []byte {
 	// prepare data
 	var sequence uint16 = request.Sequence & 0xFFFF
-	var crc uint16 = crc16.Checksum(request.Message)
+	var crc uint16 = common.CRC16(request.Message)
 	var length = uint16(len(request.Message) + common.HEADER_LENGTH)
 
 	// The sequence, crc, length must order by BigEndian
@@ -145,8 +144,9 @@ func getByteMessage(request *requestData) []byte {
 	lengthBytes := toBigEndianByteArray16(length)
 
 	// prepare message
-	message := make([]byte, length)
-	message = append(message, request.Header...)
+	message := make([]byte, 0)
+	message = append(message, common.CMD_HEADER[0], common.CMD_HEADER[1])
+	message = append(message, request.Header[0], request.Header[1])
 	message = append(message, sequenceBytes[0], sequenceBytes[1])
 	message = append(message, crc16Bytes[0], crc16Bytes[1])
 	message = append(message, lengthBytes[0], lengthBytes[1])
@@ -165,13 +165,13 @@ func getResponseMessage(response []byte) (*responseData, error) {
 	// read data
 	var header []byte = response[:4]
 	// The sequence, crc, length must order by LittleEndian
-	var sequence uint16 = binary.LittleEndian.Uint16(response[4:6])
-	var crc16Response uint16 = binary.LittleEndian.Uint16(response[6:8])
-	var length = binary.LittleEndian.Uint16(response[8:10])
-	var message []byte = response[10:]
+	var sequence uint16 = binary.BigEndian.Uint16(response[4:6])
+	var crc16Response uint16 = binary.BigEndian.Uint16(response[6:8])
+	var length = binary.BigEndian.Uint16(response[8:10])
+	var message []byte = response[10:length]
 
 	// create new crc16 to validate message
-	var crc = crc16.Checksum(message)
+	var crc = common.CRC16(message)
 
 	// Checks
 	var crcCheck = crc == crc16Response
@@ -218,7 +218,7 @@ func (client *ClientData) createOrCheckConnection() error {
 		}
 
 		// Set Connection TimeOut
-		t := time.Now().Add(time.Second * 5)
+		t := time.Now().Add(time.Second * 15)
 		err = client.connection.SetReadDeadline(t)
 		if err != nil {
 			return err
