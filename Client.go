@@ -54,24 +54,17 @@ func NewClient(host string, port int32) *ClientData {
 	return &ClientData{connectionData: connectionData}
 }
 
-func (client *ClientData) GetRealDataNew(request *models.RealDataNewReqDTO) (*models.RealDataNewResDTO, error) {
-	request_as_byte, err := proto.Marshal(request)
+func (client *ClientData) GetRealDataNew(request *models.RealDataNewReqDTO) (*models.RealDataNewResDTO, *models.RealDataNewResDTO) {
+
+	var err error = nil
+	var response proto.Message = &models.RealDataNewResDTO{}
+
+	response, err = client.sendRequestProtobuf(common.CMD_REAL_DATA_RES_DTO, request, response)
 	if err != nil {
-		return nil, err
+		return nil, nil
 	}
 
-	response, err := client.sendRequest(common.CMD_REAL_DATA_RES_DTO, request_as_byte)
-	if err != nil {
-		return nil, err
-	}
-
-	result := &models.RealDataNewResDTO{}
-	err = proto.Unmarshal(response, result)
-	if err != nil {
-		return nil, err
-	}
-
-	return result, nil
+	return response.(*models.RealDataNewResDTO), nil
 }
 
 func (client *ClientData) CloseConnection() error {
@@ -83,6 +76,25 @@ func (client *ClientData) CloseConnection() error {
 
 	client.connection = nil
 	return err
+}
+
+func (client *ClientData) sendRequestProtobuf(command []byte, requestMessage proto.Message, responseMessage proto.Message) (proto.Message, error) {
+	request_as_byte, err := proto.Marshal(requestMessage)
+	if err != nil {
+		return nil, err
+	}
+
+	response, err := client.sendRequest(command, request_as_byte)
+	if err != nil {
+		return nil, err
+	}
+
+	err = proto.Unmarshal(response, responseMessage)
+	if err != nil {
+		return nil, err
+	}
+
+	return responseMessage, nil
 }
 
 func (client *ClientData) sendRequest(command []byte, message []byte) ([]byte, error) {
