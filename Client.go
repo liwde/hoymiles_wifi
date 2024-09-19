@@ -18,10 +18,11 @@ type (
 		ConnectionInfo string
 	}
 	connectionData struct {
-		Host     string
-		Port     int32
-		Uri      string
-		Sequence uint16
+		Host              string
+		Port              int32
+		Uri               string
+		ConnectionTimeout time.Duration
+		Sequence          uint16
 	}
 	requestData struct {
 		Header   []byte
@@ -59,10 +60,11 @@ func NewClientDefault(host string) *ClientData {
 // default port is 10081
 func NewClient(host string, port int32) *ClientData {
 	connectionData := &connectionData{
-		Host:     host,
-		Port:     port,
-		Uri:      fmt.Sprintf("%s:%d", host, port),
-		Sequence: 0,
+		Host:              host,
+		Port:              port,
+		Uri:               fmt.Sprintf("%s:%d", host, port),
+		ConnectionTimeout: time.Second * 30,
+		Sequence:          0,
 	}
 
 	return &ClientData{connectionData: connectionData,
@@ -169,14 +171,19 @@ func (client *ClientData) GetRealDataNew(request *models.RealDataNewReqDTO) (*mo
 }
 
 func (client *ClientData) CloseConnection() error {
-	err := client.connection.Close()
 
-	if client != nil && client.connectionData != nil {
-		client.connectionData.Sequence = 0
+	if client.connection != nil {
+
+		err := client.connection.Close()
+
+		if client != nil && client.connectionData != nil {
+			client.connectionData.Sequence = 0
+		}
+
+		client.connection = nil
+		return err
 	}
-
-	client.connection = nil
-	return err
+	return nil
 }
 
 func (client *ClientData) sendRequestProtobuf(command []byte, requestMessage proto.Message, responseMessage proto.Message) (proto.Message, error) {
@@ -204,6 +211,9 @@ func (client *ClientData) sendRequest(command []byte, message []byte) ([]byte, e
 	if err != nil {
 		return nil, err
 	}
+	if client.connection == nil {
+		return nil, errors.New("client connection is closed")
+	}
 
 	client.connectionData.Sequence++
 
@@ -213,6 +223,13 @@ func (client *ClientData) sendRequest(command []byte, message []byte) ([]byte, e
 		Message:  message,
 	}
 	var messageData = getByteMessage(requestData) //send message
+
+	// Set Connection TimeOut
+	t := time.Now().Add(client.connectionData.ConnectionTimeout)
+	err = client.connection.SetReadDeadline(t)
+	if err != nil {
+		return nil, err
+	}
 
 	_, err = client.connection.Write(messageData)
 	if err != nil {
@@ -316,13 +333,7 @@ func (client *ClientData) createOrCheckConnection() error {
 
 		client.connection, err = net.DialTCP(common.CCONNECTION_TYPE, nil, tcpServer)
 		if err != nil {
-			return err
-		}
-
-		// Set Connection TimeOut
-		t := time.Now().Add(time.Second * 15)
-		err = client.connection.SetReadDeadline(t)
-		if err != nil {
+			client.connection = nil
 			return err
 		}
 	}
