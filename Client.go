@@ -13,16 +13,16 @@ import (
 
 type (
 	ClientData struct {
-		connectionData *connectionData
-		connection     net.Conn
-		ConnectionInfo string
+		connectionData    *connectionData
+		connection        net.Conn
+		ConnectionInfo    string
+		ConnectionTimeout time.Duration
 	}
 	connectionData struct {
-		Host              string
-		Port              int32
-		Uri               string
-		ConnectionTimeout time.Duration
-		Sequence          uint16
+		Host     string
+		Port     int32
+		Uri      string
+		Sequence uint16
 	}
 	requestData struct {
 		Header   []byte
@@ -60,15 +60,15 @@ func NewClientDefault(host string) *ClientData {
 // default port is 10081
 func NewClient(host string, port int32) *ClientData {
 	connectionData := &connectionData{
-		Host:              host,
-		Port:              port,
-		Uri:               fmt.Sprintf("%s:%d", host, port),
-		ConnectionTimeout: time.Second * 30,
-		Sequence:          0,
+		Host:     host,
+		Port:     port,
+		Uri:      fmt.Sprintf("%s:%d", host, port),
+		Sequence: 0,
 	}
 
 	return &ClientData{connectionData: connectionData,
-		ConnectionInfo: fmt.Sprintf("%s://%s:%d", common.CCONNECTION_TYPE, host, port),
+		ConnectionInfo:    fmt.Sprintf("%s://%s:%d", common.CCONNECTION_TYPE, host, port),
+		ConnectionTimeout: time.Second * 30,
 	}
 }
 
@@ -225,7 +225,7 @@ func (client *ClientData) sendRequest(command []byte, message []byte) ([]byte, e
 	var messageData = getByteMessage(requestData) //send message
 
 	// Set Connection TimeOut
-	t := time.Now().Add(client.connectionData.ConnectionTimeout)
+	t := time.Now().Add(client.ConnectionTimeout)
 	err = client.connection.SetReadDeadline(t)
 	if err != nil {
 		return nil, err
